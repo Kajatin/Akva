@@ -42,3 +42,11 @@ It also integrates with Apple Health so you get the benefit of storing your wate
     &nbsp; &nbsp;
     <img src="./screenshots/Simulator Screen Shot - iPhone 14 Pro - 2022-10-20 at 21.16.15.png" width="30%"/>
 </p>
+
+## Widget
+
+The app also comes with a widget that shows your daily water intake progress right on the home screen.
+
+<p align="center">
+    <img src="./screenshots/Simulator Screen Shot - iPhone 14 Pro - 2022-10-20 at 21.42.21.png" width="45%">
+</p>
