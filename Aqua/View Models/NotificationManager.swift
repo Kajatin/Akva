@@ -65,7 +65,6 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         if (notification.request.identifier == "time-to-drink") {
             onNotification()
-            print("Time to drink notification handler")
         }
         
         completionHandler(.sound)

@@ -14,12 +14,12 @@ class ViewModel: ObservableObject {
         didSet {
             setSharedData()
             autosave()
-            scheduleNotification()
         }
     }
     
     func refresh() {
         readWaterDataFromHealth()
+        scheduleNotification()
     }
     
     private let healthStoreManager = HealthStoreManager()
@@ -69,7 +69,7 @@ class ViewModel: ObservableObject {
         notificationManager = NotificationManager() {
             self.model.timeToDrink = true
             self.model.timeToDrinkNotification = true
-            self.refresh()
+            self.readWaterDataFromHealth()
         }
         
         // Request permission to read/write water health data
