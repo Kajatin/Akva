@@ -50,3 +50,19 @@ The app also comes with a widget that shows your daily water intake progress rig
 <p align="center">
     <img src="./screenshots/Simulator Screen Shot - iPhone 14 Pro - 2022-10-20 at 21.42.21.png" width="45%">
 </p>
+
+## Watch App
+
+<p align="center">
+    <img src="./screenshots/incoming-355A380B-827F-48A1-A802-2AE9BD56FD4D.png" width="30%"/>
+    &nbsp; &nbsp;
+    <img src="./screenshots/incoming-D0C55F0B-F42E-4EF6-8B51-244A713BE2D9.png" width="30%"/>
+    &nbsp; &nbsp;
+    <img src="./screenshots/incoming-8F10B85F-B44D-4B9C-9193-0B8A695DD620.png" width="30%"/>
+</p>
+
+<p align="center">
+    <img src="./screenshots/incoming-586F5E14-80B5-4E44-8B20-3CD1D322A7B6.png" width="30%"/>
+    &nbsp; &nbsp;
+    <img src="./screenshots/incoming-B3932672-34D6-446D-B6A5-F595E3D580C4.png" width="30%"/>
+</p>
