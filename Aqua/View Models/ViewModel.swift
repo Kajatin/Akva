@@ -224,9 +224,9 @@ class ViewModel: ObservableObject {
         let consumption: Float
     }
     
-    func createWeeklyRecordsChartData(_ records: Dictionary<Date, Float>) -> [chartItem] {
+    func createWeeklyRecordsChartData(_ records: Dictionary<Date, Double>) -> [chartItem] {
         records.map { record in
-            return chartItem(date: record.key, consumption: record.value)
+            return chartItem(date: record.key, consumption: Float(record.value))
         }
     }
     
@@ -336,6 +336,10 @@ class ViewModel: ObservableObject {
     
     func resetSettings() {
         model.restoreDefaults()
+    }
+    
+    func dismissNotification() {
+        self.model.timeToDrinkNotification = false
     }
 }
 

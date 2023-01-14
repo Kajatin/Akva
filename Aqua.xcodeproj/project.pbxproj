@@ -28,6 +28,14 @@
 		4CCD45B428E8925700D7B767 /* HealthStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */; };
 		4CCD45B628E8ED4100D7B767 /* TargetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */; };
 		4CD2D65828F0D1FF00FD1766 /* CalendarHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */; };
+		4CE327B4296DFFDF0021B336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B3296DFFDF0021B336 /* Assets.xcassets */; };
+		4CE327B7296DFFDF0021B336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */; };
+		4CE327C0296E051C0021B336 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
+		4CE327C9296E05280021B336 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57533F28E97ABD0030D889 /* NotificationManager.swift */; };
+		4CE327CA296E05280021B336 /* HealthStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */; };
+		4CE327CB296E05280021B336 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047D28CE214700948B08 /* ViewModel.swift */; };
+		4CE327CE296E06C70021B336 /* AquaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C228CD27230017C1AE /* AquaApp.swift */; };
+		4CE327D1296E08510021B336 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE327D0296E08510021B336 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C137F2C2972EE0800F5247B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4C137F2D2972EE5500F5247B /* Akva-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Akva-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4C1564BF28CD27230017C1AE /* Aqua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aqua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1564C228CD27230017C1AE /* AquaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaApp.swift; sourceTree = "<group>"; };
 		4C1564C428CD27230017C1AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +89,11 @@
 		4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStoreManager.swift; sourceTree = "<group>"; };
 		4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingView.swift; sourceTree = "<group>"; };
 		4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHistoryView.swift; sourceTree = "<group>"; };
+		4CE327AD296DFFDE0021B336 /* Akva Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Akva Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE327B3296DFFDF0021B336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CE327CF296E074A0021B336 /* Akva Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Akva Watch App.entitlements"; sourceTree = "<group>"; };
+		4CE327D0296E08510021B336 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CF6E90228EE1E0E00645F76 /* AquaWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AquaWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +114,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CE327AA296DFFDE0021B336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +130,7 @@
 				4CF6E90228EE1E0E00645F76 /* AquaWidgetExtension.entitlements */,
 				4C1564C128CD27230017C1AE /* Aqua */,
 				4C354BCD28ECC26700AE37D0 /* AquaWidget */,
+				4CE327AE296DFFDE0021B336 /* Akva Watch App */,
 				4C354BB128EC081400AE37D0 /* Frameworks */,
 				4C1564C028CD27230017C1AE /* Products */,
 			);
@@ -118,6 +141,7 @@
 			children = (
 				4C1564BF28CD27230017C1AE /* Aqua.app */,
 				4C354BCA28ECC26700AE37D0 /* AquaWidgetExtension.appex */,
+				4CE327AD296DFFDE0021B336 /* Akva Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +149,7 @@
 		4C1564C128CD27230017C1AE /* Aqua */ = {
 			isa = PBXGroup;
 			children = (
+				4C137F2C2972EE0800F5247B /* Info.plist */,
 				4C589A0E28E8392100E14BE8 /* Aqua.entitlements */,
 				4C1564C228CD27230017C1AE /* AquaApp.swift */,
 				4C41047B28CE206700948B08 /* Model.swift */,
@@ -189,6 +214,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4CE327AE296DFFDE0021B336 /* Akva Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				4C137F2D2972EE5500F5247B /* Akva-Watch-App-Info.plist */,
+				4CE327CF296E074A0021B336 /* Akva Watch App.entitlements */,
+				4CE327D0296E08510021B336 /* ContentView.swift */,
+				4CE327B3296DFFDF0021B336 /* Assets.xcassets */,
+				4CE327B5296DFFDF0021B336 /* Preview Content */,
+			);
+			path = "Akva Watch App";
+			sourceTree = "<group>";
+		};
+		4CE327B5296DFFDF0021B336 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +273,23 @@
 			productReference = 4C354BCA28ECC26700AE37D0 /* AquaWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4CE327AC296DFFDE0021B336 /* Akva Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CE327B8296DFFDF0021B336 /* Build configuration list for PBXNativeTarget "Akva Watch App" */;
+			buildPhases = (
+				4CE327A9296DFFDE0021B336 /* Sources */,
+				4CE327AA296DFFDE0021B336 /* Frameworks */,
+				4CE327AB296DFFDE0021B336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Akva Watch App";
+			productName = "Akva Watch App";
+			productReference = 4CE327AD296DFFDE0021B336 /* Akva Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,7 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					4C1564BE28CD27230017C1AE = {
@@ -243,6 +305,9 @@
 					};
 					4C354BC928ECC26700AE37D0 = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					4CE327AC296DFFDE0021B336 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
@@ -261,6 +326,7 @@
 			targets = (
 				4C1564BE28CD27230017C1AE /* Aqua */,
 				4C354BC928ECC26700AE37D0 /* AquaWidgetExtension */,
+				4CE327AC296DFFDE0021B336 /* Akva Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +346,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C354BD128ECC26800AE37D0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE327AB296DFFDE0021B336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE327B7296DFFDF0021B336 /* Preview Assets.xcassets in Resources */,
+				4CE327B4296DFFDF0021B336 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +387,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C354BCF28ECC26700AE37D0 /* AquaWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE327A9296DFFDE0021B336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE327CA296E05280021B336 /* HealthStoreManager.swift in Sources */,
+				4CE327D1296E08510021B336 /* ContentView.swift in Sources */,
+				4CE327C0296E051C0021B336 /* Model.swift in Sources */,
+				4CE327C9296E05280021B336 /* NotificationManager.swift in Sources */,
+				4CE327CB296E05280021B336 /* ViewModel.swift in Sources */,
+				4CE327CE296E06C70021B336 /* AquaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +541,7 @@
 				DEVELOPMENT_TEAM = T2HL3ZXJQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Aqua/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Aqua - Water Tracker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Aqua reads diatery water intake records from Apple Health to show you complete information.";
@@ -467,7 +556,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Aqua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -491,6 +580,7 @@
 				DEVELOPMENT_TEAM = T2HL3ZXJQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Aqua/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Aqua - Water Tracker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Aqua reads diatery water intake records from Apple Health to show you complete information.";
@@ -505,7 +595,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Aqua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -535,7 +625,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Aqua.AquaWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva.AkvaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -563,12 +653,84 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Aqua.AquaWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva.AkvaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4CE327B9296DFFDF0021B336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Akva Watch App/Akva Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Akva Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = T2HL3ZXJQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Akva-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Akva;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Aqua reads diatery water intake records from Apple Health to show you complete information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Aqua synchronizes your diatery intake records with Apple Health.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.gmail.kajatin.roland.Akva;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		4CE327BA296DFFDF0021B336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Akva Watch App/Akva Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Akva Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = T2HL3ZXJQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Akva-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Akva;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Aqua reads diatery water intake records from Apple Health to show you complete information.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Aqua synchronizes your diatery intake records with Apple Health.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.gmail.kajatin.roland.Akva;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.kajatin.roland.Akva.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
 		};
@@ -598,6 +760,15 @@
 			buildConfigurations = (
 				4C354BD728ECC26800AE37D0 /* Debug */,
 				4C354BD828ECC26800AE37D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CE327B8296DFFDF0021B336 /* Build configuration list for PBXNativeTarget "Akva Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CE327B9296DFFDF0021B336 /* Debug */,
+				4CE327BA296DFFDF0021B336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
