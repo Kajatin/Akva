@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AquaApp: App {
+struct AkvaApp: App {
     let viewModel = ViewModel()
     @Environment(\.scenePhase) var scenePhase
 

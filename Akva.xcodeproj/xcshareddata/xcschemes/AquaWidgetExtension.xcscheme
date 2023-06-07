@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C354BC928ECC26700AE37D0"
-               BuildableName = "AquaWidgetExtension.appex"
-               BlueprintName = "AquaWidgetExtension"
-               ReferencedContainer = "container:Aqua.xcodeproj">
+               BuildableName = "AkvaWidgetExtension.appex"
+               BlueprintName = "AkvaWidgetExtension"
+               ReferencedContainer = "container:Akva.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C1564BE28CD27230017C1AE"
-               BuildableName = "Aqua.app"
-               BlueprintName = "Aqua"
-               ReferencedContainer = "container:Aqua.xcodeproj">
+               BuildableName = "Akva.app"
+               BlueprintName = "Akva"
+               ReferencedContainer = "container:Akva.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,18 +63,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C354BC928ECC26700AE37D0"
-            BuildableName = "AquaWidgetExtension.appex"
-            BlueprintName = "AquaWidgetExtension"
-            ReferencedContainer = "container:Aqua.xcodeproj">
+            BuildableName = "AkvaWidgetExtension.appex"
+            BlueprintName = "AkvaWidgetExtension"
+            ReferencedContainer = "container:Akva.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C1564BE28CD27230017C1AE"
-            BuildableName = "Aqua.app"
-            BlueprintName = "Aqua"
-            ReferencedContainer = "container:Aqua.xcodeproj">
+            BuildableName = "Akva.app"
+            BlueprintName = "Akva"
+            ReferencedContainer = "container:Akva.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <EnvironmentVariables>
@@ -108,9 +108,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C1564BE28CD27230017C1AE"
-            BuildableName = "Aqua.app"
-            BlueprintName = "Aqua"
-            ReferencedContainer = "container:Aqua.xcodeproj">
+            BuildableName = "Akva.app"
+            BlueprintName = "Akva"
+            ReferencedContainer = "container:Akva.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

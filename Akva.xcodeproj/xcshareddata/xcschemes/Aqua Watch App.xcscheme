@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-               BuildableName = "Aqua Watch App.app"
-               BlueprintName = "Aqua Watch App"
-               ReferencedContainer = "container:Aqua.xcodeproj">
+               BuildableName = "Akva Watch App.app"
+               BlueprintName = "Akva Watch App"
+               ReferencedContainer = "container:Akva.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-            BuildableName = "Aqua Watch App.app"
-            BlueprintName = "Aqua Watch App"
-            ReferencedContainer = "container:Aqua.xcodeproj">
+            BuildableName = "Akva Watch App.app"
+            BlueprintName = "Akva Watch App"
+            ReferencedContainer = "container:Akva.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-            BuildableName = "Aqua Watch App.app"
-            BlueprintName = "Aqua Watch App"
-            ReferencedContainer = "container:Aqua.xcodeproj">
+            BuildableName = "Akva Watch App.app"
+            BlueprintName = "Akva Watch App"
+            ReferencedContainer = "container:Akva.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
