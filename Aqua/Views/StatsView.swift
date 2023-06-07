@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct StatsView: View {
+    @EnvironmentObject var viewModel: ViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Highlights")
                 .font(.title2)
                 .bold()
             VStack(spacing: 15) {
-                StatsViewDaily()
-                StatsViewWeekly()
+                if (viewModel.progress != 0 || viewModel.progressYesterday != 0) {
+                    StatsViewDaily()
+                }
+                if (viewModel.averageThisWeek != 0 || viewModel.averageLastWeek != 0) {
+                    StatsViewWeekly()
+                }
             }
         }
     }

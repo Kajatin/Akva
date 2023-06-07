@@ -16,8 +16,8 @@ struct AquaApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
-        }.onChange(of: scenePhase) { phase in
-            switch phase {
+        }.onChange(of: scenePhase) { old, new in
+            switch new {
             case .background:
                 break
             case .active:

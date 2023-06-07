@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
-   version = "1.3">
+   LastUpgradeVersion = "1500"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-               BuildableName = "Akva Watch App.app"
-               BlueprintName = "Akva Watch App"
+               BuildableName = "Aqua Watch App.app"
+               BlueprintName = "Aqua Watch App"
                ReferencedContainer = "container:Aqua.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,9 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -45,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-            BuildableName = "Akva Watch App.app"
-            BlueprintName = "Akva Watch App"
+            BuildableName = "Aqua Watch App.app"
+            BlueprintName = "Aqua Watch App"
             ReferencedContainer = "container:Aqua.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CE327AC296DFFDE0021B336"
-            BuildableName = "Akva Watch App.app"
-            BlueprintName = "Akva Watch App"
+            BuildableName = "Aqua Watch App.app"
+            BlueprintName = "Aqua Watch App"
             ReferencedContainer = "container:Aqua.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
