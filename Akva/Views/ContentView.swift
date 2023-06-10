@@ -6,14 +6,33 @@
 //
 
 import SwiftUI
+import SwiftData
+import DiateryWaterData
 
-struct ContentView: View {
+struct ContentViewN: View {
     @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
+        VStack {
+            Text("\(HealthStoreManagerNew.shared.isHealthKitAuthorized ? "authorized" : "not authorized")")
+            Text("\(viewModel.waterData.count)")
+            Button {
+//                HealthStoreManagerNew.shared.requestAuthorization()
+            } label: {
+                Text("Request")
+            }
+//            List(waterData) { data in
+//                Text("\(data.waterAmount)")
+//            }
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
         TabView {
             TodayView()
-                .badge(viewModel.model.timeToDrink ? 1 : 0)
+                .badge(NotificationManagerNew.shared.badge)
                 .tabItem {
                     Label("Today", systemImage: "house")
                 }
@@ -27,9 +46,9 @@ struct ContentView: View {
 
 struct TodayView: View {
     @EnvironmentObject var viewModel: ViewModel
-    
-    @State private var showAddDrinkSheet = false
-    
+
+    @State private var showAddDrinkSheet = true
+
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
@@ -38,7 +57,7 @@ struct TodayView: View {
                         .padding(.top, 40)
                     WarningsView()
                     StatsView()
-                    
+
                     VStack {
                         NavigationLink {
                             AllDrinkData()
@@ -52,7 +71,7 @@ struct TodayView: View {
                         }
                         .foregroundColor(.primary)
                         .buttonStyle(.bordered)
-                        
+
                         NavigationLink {
                             TargetSettingView()
                         } label: {
@@ -85,16 +104,10 @@ struct TodayView: View {
                         .foregroundColor(.accentColor)
                         .animation(.spring(), value: viewModel.model.timeToDrink)
                     }
-                    .sheet(isPresented: $showAddDrinkSheet) {
-                        RegisterHydration()
-                    }
                 }
             }
-            .sheet(isPresented: $viewModel.showNotificationRequest) {
-                NotificationPermissionRequest()
-            }
-            .sheet(isPresented: $viewModel.showHealthPermissionRequest) {
-                HealthPermissionRequest()
+            .sheet(isPresented: $showAddDrinkSheet) {
+                RegisterHydration()
             }
         }
     }
@@ -102,12 +115,12 @@ struct TodayView: View {
 
 struct RegisterHydration: View {
     @EnvironmentObject var viewModel: ViewModel
-    @Environment(\.presentationMode) var presentationMode 
-    
+    @Environment(\.presentationMode) var presentationMode
+
     private let volumeAmounts: [Double] = [100, 150, 200, 250, 300, 350]
     @State private var selectedVolume: Double = 200
     @State private var date = Date()
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -117,7 +130,7 @@ struct RegisterHydration: View {
                     }
                 }
                 .pickerStyle(.inline)
-                
+
                 Section("Date") {
                     DatePicker(
                         "Date",
@@ -149,7 +162,7 @@ struct RegisterHydration: View {
                 }
             }
         }
-        
+
     }
 }
 
@@ -157,6 +170,8 @@ struct ContentView_Previews: PreviewProvider {
     static let viewModel = ViewModel()
 
     static var previews: some View {
-        ContentView().environmentObject(viewModel)
+        ContentView()
+            .environmentObject(viewModel)
+            .waterDataContainer()
     }
 }

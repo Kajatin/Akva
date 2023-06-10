@@ -11,6 +11,12 @@
 		4C1564C528CD27230017C1AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C428CD27230017C1AE /* ContentView.swift */; };
 		4C1564C728CD27240017C1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1564C628CD27240017C1AE /* Assets.xcassets */; };
 		4C1564CA28CD27240017C1AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1564C928CD27240017C1AE /* Preview Assets.xcassets */; };
+		4C2854962A32752D00971889 /* DiateryWaterData in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2854952A32752D00971889 /* DiateryWaterData */; };
+		4C2854982A346F9C00971889 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854972A346F9C00971889 /* OnboardingFlow.swift */; };
+		4C28549B2A3474AF00971889 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549A2A3474AF00971889 /* Keys.swift */; };
+		4C28549E2A347C1300971889 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549D2A347C1300971889 /* Welcome.swift */; };
+		4C2854A02A34B4BF00971889 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549F2A34B4BF00971889 /* Settings.swift */; };
+		4C2854A32A34BA8800971889 /* CodableArray+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854A22A34BA8800971889 /* CodableArray+RawRepresentable.swift */; };
 		4C354BCB28ECC26700AE37D0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB228EC081400AE37D0 /* WidgetKit.framework */; };
 		4C354BCC28ECC26700AE37D0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB428EC081400AE37D0 /* SwiftUI.framework */; };
 		4C354BCF28ECC26700AE37D0 /* AkvaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C354BCE28ECC26700AE37D0 /* AkvaWidget.swift */; };
@@ -70,6 +76,12 @@
 		4C1564C428CD27230017C1AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C1564C628CD27240017C1AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C1564C928CD27240017C1AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4C2854942A3274DC00971889 /* DiateryWaterData */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DiateryWaterData; sourceTree = "<group>"; };
+		4C2854972A346F9C00971889 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		4C28549A2A3474AF00971889 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		4C28549D2A347C1300971889 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		4C28549F2A34B4BF00971889 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4C2854A22A34BA8800971889 /* CodableArray+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableArray+RawRepresentable.swift"; sourceTree = "<group>"; };
 		4C354BB228EC081400AE37D0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4C354BB428EC081400AE37D0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AkvaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2854962A32752D00971889 /* DiateryWaterData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +144,7 @@
 				4C1564C128CD27230017C1AE /* Akva */,
 				4C354BCD28ECC26700AE37D0 /* AkvaWidget */,
 				4CE327AE296DFFDE0021B336 /* Akva Watch App */,
+				4C2854942A3274DC00971889 /* DiateryWaterData */,
 				4C354BB128EC081400AE37D0 /* Frameworks */,
 				4C1564C028CD27230017C1AE /* Products */,
 			);
@@ -149,6 +163,9 @@
 		4C1564C128CD27230017C1AE /* Akva */ = {
 			isa = PBXGroup;
 			children = (
+				4C2854A12A34BA7C00971889 /* Helper */,
+				4C28549C2A34784000971889 /* Onboarding */,
+				4C2854992A34740B00971889 /* Storage */,
 				4C137F2C2972EE0800F5247B /* Info.plist */,
 				4C589A0E28E8392100E14BE8 /* Akva.entitlements */,
 				4C1564C228CD27230017C1AE /* AkvaApp.swift */,
@@ -167,6 +184,34 @@
 				4C1564C928CD27240017C1AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C2854992A34740B00971889 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				4C28549A2A3474AF00971889 /* Keys.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		4C28549C2A34784000971889 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4C71421E28F1E56600118584 /* NotificationPermissionRequest.swift */,
+				4C2854972A346F9C00971889 /* OnboardingFlow.swift */,
+				4C589A0F28E84D6700E14BE8 /* HealthPermissionRequest.swift */,
+				4C28549D2A347C1300971889 /* Welcome.swift */,
+				4C28549F2A34B4BF00971889 /* Settings.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4C2854A12A34BA7C00971889 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854A22A34BA8800971889 /* CodableArray+RawRepresentable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		4C354BB128EC081400AE37D0 /* Frameworks */ = {
@@ -206,8 +251,6 @@
 				4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */,
 				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
 				4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */,
-				4C589A0F28E84D6700E14BE8 /* HealthPermissionRequest.swift */,
-				4C71421E28F1E56600118584 /* NotificationPermissionRequest.swift */,
 				4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */,
 				4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */,
 			);
@@ -252,6 +295,9 @@
 				4C354BD428ECC26800AE37D0 /* PBXTargetDependency */,
 			);
 			name = Akva;
+			packageProductDependencies = (
+				4C2854952A32752D00971889 /* DiateryWaterData */,
+			);
 			productName = Aqua;
 			productReference = 4C1564BF28CD27230017C1AE /* Akva.app */;
 			productType = "com.apple.product-type.application";
@@ -298,7 +344,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4C1564BE28CD27230017C1AE = {
 						CreatedOnToolsVersion = 14.0;
@@ -366,9 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C41047C28CE206700948B08 /* Model.swift in Sources */,
+				4C28549B2A3474AF00971889 /* Keys.swift in Sources */,
 				4C589A0D28E6B5C300E14BE8 /* WarningsView.swift in Sources */,
 				4C589A1028E84D6700E14BE8 /* HealthPermissionRequest.swift in Sources */,
+				4C2854982A346F9C00971889 /* OnboardingFlow.swift in Sources */,
 				4CCD45AE28E87BC300D7B767 /* CircularProgressBar.swift in Sources */,
+				4C2854A02A34B4BF00971889 /* Settings.swift in Sources */,
+				4C28549E2A347C1300971889 /* Welcome.swift in Sources */,
 				4C589A0B28E4DC8C00E14BE8 /* StatsView.swift in Sources */,
 				4CCD45B428E8925700D7B767 /* HealthStoreManager.swift in Sources */,
 				4CD2D65828F0D1FF00FD1766 /* CalendarHistoryView.swift in Sources */,
@@ -376,6 +426,7 @@
 				4C1564C528CD27230017C1AE /* ContentView.swift in Sources */,
 				4C41047E28CE214700948B08 /* ViewModel.swift in Sources */,
 				4CCD45B228E8865300D7B767 /* AllDrinkData.swift in Sources */,
+				4C2854A32A34BA8800971889 /* CodableArray+RawRepresentable.swift in Sources */,
 				4C71421F28F1E56600118584 /* NotificationPermissionRequest.swift in Sources */,
 				4C1564C328CD27230017C1AE /* AkvaApp.swift in Sources */,
 				4CCD45B628E8ED4100D7B767 /* TargetSettingView.swift in Sources */,
@@ -450,6 +501,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -511,6 +563,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -552,6 +605,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = healthkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -594,6 +648,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = healthkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -790,6 +845,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C2854952A32752D00971889 /* DiateryWaterData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DiateryWaterData;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C1564B728CD27230017C1AE /* Project object */;
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 import HealthKit
+import DiateryWaterData
 
 class ViewModel: ObservableObject {
     @Published private(set) var model: Model {
@@ -58,6 +59,8 @@ class ViewModel: ObservableObject {
         // Reload the widget's timeline
         WidgetCenter.shared.reloadTimelines(ofKind: "AquaWidget")
     }
+    
+    private(set) var waterData: [HKQuantitySample] = []
 
     init() {
         if let url = Autosave.url, let autosavedModel = try? Model(url: url) {
@@ -92,6 +95,12 @@ class ViewModel: ObservableObject {
 
         setSharedData()
         scheduleNotification()
+        
+        HealthStoreManagerNew.shared.loadWaterData {
+            self.waterData = HealthStoreManagerNew.shared.waterData
+        } onError: { error in
+            
+        }
     }
 
     // MARK: Persistance functions
