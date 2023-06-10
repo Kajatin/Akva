@@ -1,11 +1,51 @@
 //
-//  CalendarHistoryView.swift
-//  Aqua
+//  History.swift
+//  Akva
 //
-//  Created by Roland Kajatin on 07/10/2022.
+//  Created by Roland Kajatin on 10/06/2023.
 //
 
 import SwiftUI
+
+struct History: View {
+    @Environment(\.calendar) var calendar
+    @Environment(\.colorScheme) var colorScheme
+    
+    @EnvironmentObject var viewModel: ViewModel
+    
+    private var year: DateInterval {
+        calendar.dateInterval(of: .year, for: Date())!
+    }
+    
+    var body: some View {
+        CalendarProgressView(interval: year) { date in
+            let normProgress = viewModel.normalizedProgress(for: date)
+            let opacity = date > Date() ? 0.65 : 1
+            let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
+            ZStack {
+                if normProgress >= 1 {
+                    Circle()
+                        .foregroundColor(.accentColor)
+                } else {
+                    Circle()
+                        .stroke(Color.secondary, lineWidth: 6)
+                        .opacity(colorScheme == .light ? 0.2 : 0.25)
+                    
+                    Circle()
+                        .trim(from: 0, to: viewModel.normalizedProgress(for: date))
+                        .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                }
+                Text(String(self.calendar.component(.day, from: date)))
+                    .foregroundColor(dateNumberColor)
+                    .bold()
+            }
+            .padding(6)
+            .opacity(opacity)
+        }
+        .padding(.horizontal)
+    }
+}
 
 fileprivate extension DateFormatter {
     static var month: DateFormatter {
@@ -186,54 +226,11 @@ struct CalendarProgressView<DateView>: View where DateView: View {
     }
 }
 
-struct CalendarHistoryView: View {
-    @Environment(\.calendar) var calendar
-    @Environment(\.colorScheme) var colorScheme
-    
-    @EnvironmentObject var viewModel: ViewModel
-    
-    private var year: DateInterval {
-        calendar.dateInterval(of: .year, for: Date())!
-    }
-    
-    var body: some View {
-        NavigationView {
-            CalendarProgressView(interval: year) { date in
-                let normProgress = viewModel.normalizedProgress(for: date)
-                let opacity = date > Date() ? 0.65 : 1
-                let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
-                ZStack {
-                    if normProgress >= 1 {
-                        Circle()
-                            .foregroundColor(.accentColor)
-                    } else {
-                        Circle()
-                            .stroke(Color.secondary, lineWidth: 6)
-                            .opacity(colorScheme == .light ? 0.2 : 0.25)
-                        
-                        Circle()
-                            .trim(from: 0, to: viewModel.normalizedProgress(for: date))
-                            .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                            .rotationEffect(.degrees(-90))
-                    }
-                    Text(String(self.calendar.component(.day, from: date)))
-                        .foregroundColor(dateNumberColor)
-                        .bold()
-                }
-                .padding(6)
-                .opacity(opacity)
-            }
-            .padding(.horizontal)
-            .navigationTitle("History")
-        }
-    }
-}
-
-struct CalendarHistoryView_Previews: PreviewProvider {
+struct History_Previews: PreviewProvider {
     static let viewModel = ViewModel()
     
     static var previews: some View {
-        CalendarHistoryView()
+        History()
             .environmentObject(viewModel)
     }
 }

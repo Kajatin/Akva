@@ -17,6 +17,18 @@
 		4C28549E2A347C1300971889 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549D2A347C1300971889 /* Welcome.swift */; };
 		4C2854A02A34B4BF00971889 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549F2A34B4BF00971889 /* Settings.swift */; };
 		4C2854A32A34BA8800971889 /* CodableArray+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854A22A34BA8800971889 /* CodableArray+RawRepresentable.swift */; };
+		4C2854A72A35037C00971889 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854A62A35037C00971889 /* AppScreen.swift */; };
+		4C2854A92A35056D00971889 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854A82A35056D00971889 /* AppTabView.swift */; };
+		4C2854AC2A35069500971889 /* TodayNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854AB2A35069500971889 /* TodayNavigationStack.swift */; };
+		4C2854AE2A3507CF00971889 /* RegisterWaterIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */; };
+		4C2854B12A350A4000971889 /* HistoryNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B02A350A4000971889 /* HistoryNavigationStack.swift */; };
+		4C2854B42A350B3600971889 /* AccountNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B32A350B3600971889 /* AccountNavigationStack.swift */; };
+		4C2854B72A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B62A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift */; };
+		4C2854B92A350C3000971889 /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B82A350C3000971889 /* AppSidebarList.swift */; };
+		4C2854BB2A350C3900971889 /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BA2A350C3900971889 /* AppDetailColumn.swift */; };
+		4C2854BD2A35103500971889 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BC2A35103500971889 /* Today.swift */; };
+		4C2854BF2A35115000971889 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BE2A35115000971889 /* History.swift */; };
+		4C2854C12A35124A00971889 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854C02A35124A00971889 /* Account.swift */; };
 		4C354BCB28ECC26700AE37D0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB228EC081400AE37D0 /* WidgetKit.framework */; };
 		4C354BCC28ECC26700AE37D0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB428EC081400AE37D0 /* SwiftUI.framework */; };
 		4C354BCF28ECC26700AE37D0 /* AkvaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C354BCE28ECC26700AE37D0 /* AkvaWidget.swift */; };
@@ -34,7 +46,6 @@
 		4CCD45B228E8865300D7B767 /* AllDrinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B128E8865300D7B767 /* AllDrinkData.swift */; };
 		4CCD45B428E8925700D7B767 /* HealthStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */; };
 		4CCD45B628E8ED4100D7B767 /* TargetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */; };
-		4CD2D65828F0D1FF00FD1766 /* CalendarHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */; };
 		4CE327B4296DFFDF0021B336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B3296DFFDF0021B336 /* Assets.xcassets */; };
 		4CE327B7296DFFDF0021B336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */; };
 		4CE327C0296E051C0021B336 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
@@ -82,6 +93,18 @@
 		4C28549D2A347C1300971889 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		4C28549F2A34B4BF00971889 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4C2854A22A34BA8800971889 /* CodableArray+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodableArray+RawRepresentable.swift"; sourceTree = "<group>"; };
+		4C2854A62A35037C00971889 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		4C2854A82A35056D00971889 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		4C2854AB2A35069500971889 /* TodayNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNavigationStack.swift; sourceTree = "<group>"; };
+		4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWaterIntake.swift; sourceTree = "<group>"; };
+		4C2854B02A350A4000971889 /* HistoryNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationStack.swift; sourceTree = "<group>"; };
+		4C2854B32A350B3600971889 /* AccountNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNavigationStack.swift; sourceTree = "<group>"; };
+		4C2854B62A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefersTabNavigationEnvironmentKey.swift; sourceTree = "<group>"; };
+		4C2854B82A350C3000971889 /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
+		4C2854BA2A350C3900971889 /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
+		4C2854BC2A35103500971889 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		4C2854BE2A35115000971889 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		4C2854C02A35124A00971889 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		4C354BB228EC081400AE37D0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4C354BB428EC081400AE37D0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AkvaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +123,6 @@
 		4CCD45B128E8865300D7B767 /* AllDrinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDrinkData.swift; sourceTree = "<group>"; };
 		4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStoreManager.swift; sourceTree = "<group>"; };
 		4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingView.swift; sourceTree = "<group>"; };
-		4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHistoryView.swift; sourceTree = "<group>"; };
 		4CE327AD296DFFDE0021B336 /* Akva Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Akva Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE327B3296DFFDF0021B336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -163,16 +185,21 @@
 		4C1564C128CD27230017C1AE /* Akva */ = {
 			isa = PBXGroup;
 			children = (
-				4C2854A12A34BA7C00971889 /* Helper */,
-				4C28549C2A34784000971889 /* Onboarding */,
-				4C2854992A34740B00971889 /* Storage */,
 				4C137F2C2972EE0800F5247B /* Info.plist */,
 				4C589A0E28E8392100E14BE8 /* Akva.entitlements */,
+				4C1564C628CD27240017C1AE /* Assets.xcassets */,
 				4C1564C228CD27230017C1AE /* AkvaApp.swift */,
 				4C41047B28CE206700948B08 /* Model.swift */,
-				4C57533E28E979920030D889 /* Views */,
+				4C1564C428CD27230017C1AE /* ContentView.swift */,
+				4C2854A12A34BA7C00971889 /* Helper */,
+				4C28549C2A34784000971889 /* Onboarding */,
+				4C2854A42A35036600971889 /* Navigation */,
+				4C2854AA2A35068600971889 /* Today */,
+				4C2854AF2A350A3500971889 /* History */,
+				4C2854B22A350B2700971889 /* Account */,
+				4C2854992A34740B00971889 /* Storage */,
+				4C2854B52A350BBC00971889 /* General */,
 				4C57533D28E9795E0030D889 /* View Models */,
-				4C1564C628CD27240017C1AE /* Assets.xcassets */,
 				4C1564C828CD27240017C1AE /* Preview Content */,
 			);
 			path = Akva;
@@ -214,6 +241,58 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		4C2854A42A35036600971889 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854A62A35037C00971889 /* AppScreen.swift */,
+				4C2854A82A35056D00971889 /* AppTabView.swift */,
+				4C2854B82A350C3000971889 /* AppSidebarList.swift */,
+				4C2854BA2A350C3900971889 /* AppDetailColumn.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4C2854AA2A35068600971889 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854AB2A35069500971889 /* TodayNavigationStack.swift */,
+				4C2854BC2A35103500971889 /* Today.swift */,
+				4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */,
+				4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */,
+				4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */,
+				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
+				4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		4C2854AF2A350A3500971889 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854B02A350A4000971889 /* HistoryNavigationStack.swift */,
+				4C2854BE2A35115000971889 /* History.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4C2854B22A350B2700971889 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854B32A350B3600971889 /* AccountNavigationStack.swift */,
+				4C2854C02A35124A00971889 /* Account.swift */,
+				4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		4C2854B52A350BBC00971889 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4C2854B62A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		4C354BB128EC081400AE37D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,20 +320,6 @@
 				4CCD45B328E8925700D7B767 /* HealthStoreManager.swift */,
 			);
 			path = "View Models";
-			sourceTree = "<group>";
-		};
-		4C57533E28E979920030D889 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */,
-				4C1564C428CD27230017C1AE /* ContentView.swift */,
-				4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */,
-				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
-				4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */,
-				4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */,
-				4CD2D65728F0D1FF00FD1766 /* CalendarHistoryView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		4CE327AE296DFFDE0021B336 /* Akva Watch App */ = {
@@ -411,25 +476,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2854AE2A3507CF00971889 /* RegisterWaterIntake.swift in Sources */,
 				4C41047C28CE206700948B08 /* Model.swift in Sources */,
+				4C2854B42A350B3600971889 /* AccountNavigationStack.swift in Sources */,
 				4C28549B2A3474AF00971889 /* Keys.swift in Sources */,
+				4C2854BB2A350C3900971889 /* AppDetailColumn.swift in Sources */,
+				4C2854C12A35124A00971889 /* Account.swift in Sources */,
 				4C589A0D28E6B5C300E14BE8 /* WarningsView.swift in Sources */,
 				4C589A1028E84D6700E14BE8 /* HealthPermissionRequest.swift in Sources */,
 				4C2854982A346F9C00971889 /* OnboardingFlow.swift in Sources */,
 				4CCD45AE28E87BC300D7B767 /* CircularProgressBar.swift in Sources */,
+				4C2854AC2A35069500971889 /* TodayNavigationStack.swift in Sources */,
 				4C2854A02A34B4BF00971889 /* Settings.swift in Sources */,
 				4C28549E2A347C1300971889 /* Welcome.swift in Sources */,
+				4C2854B72A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
 				4C589A0B28E4DC8C00E14BE8 /* StatsView.swift in Sources */,
 				4CCD45B428E8925700D7B767 /* HealthStoreManager.swift in Sources */,
-				4CD2D65828F0D1FF00FD1766 /* CalendarHistoryView.swift in Sources */,
+				4C2854A92A35056D00971889 /* AppTabView.swift in Sources */,
 				4C57534028E97ABD0030D889 /* NotificationManager.swift in Sources */,
+				4C2854A72A35037C00971889 /* AppScreen.swift in Sources */,
 				4C1564C528CD27230017C1AE /* ContentView.swift in Sources */,
+				4C2854BD2A35103500971889 /* Today.swift in Sources */,
+				4C2854B92A350C3000971889 /* AppSidebarList.swift in Sources */,
 				4C41047E28CE214700948B08 /* ViewModel.swift in Sources */,
 				4CCD45B228E8865300D7B767 /* AllDrinkData.swift in Sources */,
+				4C2854BF2A35115000971889 /* History.swift in Sources */,
 				4C2854A32A34BA8800971889 /* CodableArray+RawRepresentable.swift in Sources */,
 				4C71421F28F1E56600118584 /* NotificationPermissionRequest.swift in Sources */,
 				4C1564C328CD27230017C1AE /* AkvaApp.swift in Sources */,
 				4CCD45B628E8ED4100D7B767 /* TargetSettingView.swift in Sources */,
+				4C2854B12A350A4000971889 /* HistoryNavigationStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +698,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -665,7 +741,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
