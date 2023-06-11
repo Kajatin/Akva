@@ -8,11 +8,10 @@
 import HealthKit
 import Foundation
 
-public class HealthStoreManagerNew {
-    public static let shared = HealthStoreManagerNew()
+public class HealthStoreManager {
+    public static let shared = HealthStoreManager()
     private(set) var authorizationStatus: HKAuthorizationStatus
 
-    public var waterData: [HKQuantitySample] = []
     internal let healthStore: HKHealthStore
     internal let diateryWaterType: HKQuantityType
 

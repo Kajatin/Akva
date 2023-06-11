@@ -37,10 +37,10 @@ struct HealthPermissionRequest: View {
             
             Button {
                 Task {
-                    if (!HealthStoreManagerNew.shared.isHealthKitAuthorized) {
+                    if (!HealthStoreManager.shared.isHealthKitAuthorized) {
                         do {
                             healthKitProcessing = true
-                            try await HealthStoreManagerNew.shared.requestAuthorization()
+                            try await HealthStoreManager.shared.requestAuthorization()
                         } catch {
                             print("Could not request HealthKit permissions.")
                         }
@@ -48,7 +48,7 @@ struct HealthPermissionRequest: View {
                         healthKitProcessing = false
                     }
                     
-                    if (HealthStoreManagerNew.shared.isHealthKitAuthorized) {
+                    if (HealthStoreManager.shared.isHealthKitAuthorized) {
                         onboardingSteps.append(.notificationsPermissions)
                     } else {
                         showDeniedAlert = true

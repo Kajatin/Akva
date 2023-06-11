@@ -17,12 +17,8 @@ struct TodayNavigationStack: View {
     }
 }
 
-struct TodayNavigationStack_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-    
-    static var previews: some View {
-        TodayNavigationStack()
-            .environmentObject(viewModel)
-            .waterDataContainer()
-    }
+#Preview {
+    TodayNavigationStack()
+        .environmentObject(ViewModel())
+        .waterDataContainer(inMemory: true)
 }

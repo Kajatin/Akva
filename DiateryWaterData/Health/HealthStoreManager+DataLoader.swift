@@ -11,18 +11,22 @@ import Foundation
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "Health")
 
-extension HealthStoreManagerNew {
-    public func loadWaterData(execute: @escaping () -> Void, onError: @escaping (Error?) -> Void) {
+extension HealthStoreManager {
+    internal func loadWaterData(execute: @escaping ([HKQuantitySample]) -> Void, onError: @escaping (Error?) -> Void) {
         if (authorizationStatus == .notDetermined) {
+            logger.error("Cannot load data because authorization has not been granted")
             onError(HKError(HKError(.errorAuthorizationNotDetermined).code))
             return
         }
 
         if (authorizationStatus == .sharingDenied) {
+            logger.error("Cannot load data because authorization has been denied")
             onError(HKError(HKError(.errorAuthorizationDenied).code))
             return
         }
 
+//        let last24hPredicate = HKQuery.predicateForSamples(withStart: Date().oneDayAgo, end: Date(), options: .strictEndDate)
+        
         let waterQuery = HKSampleQuery(
             sampleType: self.diateryWaterType,
             predicate: nil,
@@ -34,9 +38,8 @@ extension HealthStoreManagerNew {
                 return
             }
 
-            self.waterData = samples
-            logger.info("Loaded \(samples.count) water records")
-            execute()
+            logger.trace("Loaded \(samples.count) water records")
+            execute(samples)
         }
 
         healthStore.execute(waterQuery)

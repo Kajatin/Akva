@@ -26,12 +26,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-
-    static var previews: some View {
-        ContentView()
-            .environmentObject(viewModel)
-            .waterDataContainer()
-    }
+#Preview {
+    ContentView()
+        .environmentObject(ViewModel())
+        .waterDataContainer(inMemory: true)
 }

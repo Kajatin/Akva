@@ -19,21 +19,10 @@ class ViewModel: ObservableObject {
     }
 
     func refresh() {
-        readWaterDataFromHealth()
         scheduleNotification()
     }
 
-    private let healthStoreManager = HealthStoreManager()
     private var healthWaterDataAvailable = false
-    private func readWaterDataFromHealth() {
-        healthStoreManager.readWater {
-            self.healthWaterDataAvailable = true
-            self.model.updateHealthRecords(with: self.healthStoreManager.waterRecords)
-        } onError: { error in
-            self.healthWaterDataAvailable = false
-            print("Something went wrong querying water health data: \(String(describing: error))")
-        }
-    }
 
     private var notificationManager: NotificationManager?
     private var notificationAuthorized = false
@@ -72,15 +61,7 @@ class ViewModel: ObservableObject {
         notificationManager = NotificationManager() {
             self.model.timeToDrink = true
             self.model.timeToDrinkNotification = true
-            self.readWaterDataFromHealth()
         }
-
-        // Request permission to read/write water health data
-        if healthStoreManager.isAuthorization(.notDetermined) {
-            model.showHealthPermissionRequest = true
-        }
-        // Load the water health data from Apple Health
-        readWaterDataFromHealth()
 
         // Request notification authorization if it's not already given
         notificationManager!.isAuthorization { settings in
@@ -96,11 +77,11 @@ class ViewModel: ObservableObject {
         setSharedData()
         scheduleNotification()
         
-        HealthStoreManagerNew.shared.loadWaterData {
-            self.waterData = HealthStoreManagerNew.shared.waterData
-        } onError: { error in
-            
-        }
+//        HealthStoreManager.shared.loadWaterData {
+//            self.waterData = HealthStoreManager.shared.waterData
+//        } onError: { error in
+//            
+//        }
     }
 
     // MARK: Persistance functions
@@ -252,20 +233,6 @@ class ViewModel: ObservableObject {
         set { model.showHealthPermissionRequest = newValue }
     }
 
-    func requestAppleHealthPermissions(skipped: Bool = false) {
-        if !skipped {
-            healthStoreManager.requestAuthorization { (success, error) in
-                if success {
-                    self.readWaterDataFromHealth()
-                } else {
-                    print("Something went wrong while requesting Apple Health permissions: \(String(describing: error))")
-                }
-            }
-        }
-
-        model.showHealthPermissionRequest = false
-    }
-
     var showNotificationRequest: Bool {
         get { return model.showNotificationRequest }
         set { model.showNotificationRequest = newValue }
@@ -322,20 +289,6 @@ class ViewModel: ObservableObject {
 //                }
 //            }
 //        }
-//        
-        // Add the new water record to Health
-        let waterQuantitySample = healthStoreManager.generateQuantitySample(quantity: volume, date: date)
-        healthStoreManager.writeWaterSample(waterQuantitySample) { (success, error) in
-            if success {
-                DispatchQueue.main.async {
-                    // Refresh the water records from Health
-                    self.model.healthSamples.append(waterQuantitySample)
-                }
-            } else {
-                //TODO: Handle error here
-                print("Something went wrong writing health sample: \(String(describing: error))")
-            }
-        }
 
         model.timeToDrink = false
 

@@ -5,8 +5,11 @@
 //  Created by Roland Kajatin on 10/06/2023.
 //
 
+import OSLog
 import SwiftUI
 import SwiftData
+
+private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
 
 struct WaterDataContainerViewModifier: ViewModifier {
     let container: ModelContainer
@@ -23,12 +26,19 @@ struct WaterDataContainerViewModifier: ViewModifier {
 }
 
 struct SyncDataViewModifier: ViewModifier {
+    @Environment(\.scenePhase) var scenePhase
     @Environment(\.modelContext) private var modelContext
     
     func body(content: Content) -> some View {
         content.onAppear {
-            // TODO: sync data from health
-//            DataGeneration.generateAllData(modelContext: modelContext)
+            WaterData.syncWaterDataFromHealth(modelContext: modelContext)
+        }.onChange(of: scenePhase) { old, new in
+            switch new {
+            case .active:
+                WaterData.syncWaterDataFromHealth(modelContext: modelContext)
+            default:
+                break
+            }
         }
     }
 }
