@@ -16,6 +16,7 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
     public var target: Double = 3000
     public var timeToDrink: Bool = true
     public var lastSyncDate: Date? = nil
+    public var notificationInterval: Double = 3600
     @Transient public var error: Error? = nil
     @Transient public var samples: [HKQuantitySample] = []
     

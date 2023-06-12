@@ -6,44 +6,50 @@
 //
 
 import SwiftUI
+import SwiftData
+import DiateryWaterData
 
 struct History: View {
     @Environment(\.calendar) var calendar
     @Environment(\.colorScheme) var colorScheme
     
-    @EnvironmentObject var viewModel: ViewModel
+    @Query private var waterData: [WaterData]
     
     private var year: DateInterval {
         calendar.dateInterval(of: .year, for: Date())!
     }
     
     var body: some View {
-        CalendarProgressView(interval: year) { date in
-            let normProgress = viewModel.normalizedProgress(for: date)
-            let opacity = date > Date() ? 0.65 : 1
-            let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
-            ZStack {
-                if normProgress >= 1 {
-                    Circle()
-                        .foregroundColor(.accentColor)
-                } else {
-                    Circle()
-                        .stroke(Color.secondary, lineWidth: 6)
-                        .opacity(colorScheme == .light ? 0.2 : 0.25)
-                    
-                    Circle()
-                        .trim(from: 0, to: viewModel.normalizedProgress(for: date))
-                        .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                        .rotationEffect(.degrees(-90))
+        if let data = waterData.first {
+            CalendarProgressView(interval: year) { date in
+                let normProgress = data.normalizedProgress(for: date)
+                let opacity = date > Date() ? 0.65 : 1
+                let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
+                ZStack {
+                    if normProgress >= 1 {
+                        Circle()
+                            .foregroundColor(.accentColor)
+                    } else {
+                        Circle()
+                            .stroke(Color.secondary, lineWidth: 6)
+                            .opacity(colorScheme == .light ? 0.2 : 0.25)
+                        
+                        Circle()
+                            .trim(from: 0, to: data.normalizedProgress(for: date))
+                            .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                            .rotationEffect(.degrees(-90))
+                    }
+                    Text(String(self.calendar.component(.day, from: date)))
+                        .foregroundColor(dateNumberColor)
+                        .bold()
                 }
-                Text(String(self.calendar.component(.day, from: date)))
-                    .foregroundColor(dateNumberColor)
-                    .bold()
+                .padding(6)
+                .opacity(opacity)
             }
-            .padding(6)
-            .opacity(opacity)
+            .padding(.horizontal)
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
-        .padding(.horizontal)
     }
 }
 
@@ -226,11 +232,7 @@ struct CalendarProgressView<DateView>: View where DateView: View {
     }
 }
 
-struct History_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-    
-    static var previews: some View {
-        History()
-            .environmentObject(viewModel)
-    }
+#Preview {
+    History()
+        .waterDataContainer(inMemory: true)
 }

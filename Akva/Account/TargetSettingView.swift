@@ -6,31 +6,36 @@
 //
 
 import SwiftUI
+import SwiftData
+import DiateryWaterData
 
 struct TargetSettingView: View {
-    @EnvironmentObject var viewModel: ViewModel
-    
+    @Query private var waterData: [WaterData]
+    // TODO: this is temporary because the $data.target binding wasn't compiling
+    @State private var target: Double = 3000
+
     private var volumes: [Double] = Array(stride(from: 500.0, through: 5000.0, by: 100.0))
-    
+
     var body: some View {
-        Form {
-            Section("Target water intake") {
-                Picker("Target", selection: $viewModel.target) {
-                    ForEach(volumes, id:\.self) { volume in
-                        Text("\(volume.formatted()) mL")
+        if let data = waterData.first {
+            Form {
+                Section("Target water intake") {
+                    Picker("Target", selection: $target) {
+                        ForEach(volumes, id:\.self) { volume in
+                            Text("\(volume.formatted()) mL")
+                        }
                     }
+                    .pickerStyle(.wheel)
                 }
-                .pickerStyle(.wheel)
             }
+            .navigationTitle("Settings")
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
-        .navigationTitle("Settings")
     }
 }
 
-struct TargetSettingView_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-    
-    static var previews: some View {
-        TargetSettingView().environmentObject(viewModel)
-    }
+#Preview {
+    TargetSettingView()
+        .waterDataContainer(inMemory: true)
 }

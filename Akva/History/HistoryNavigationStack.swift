@@ -18,11 +18,7 @@ struct HistoryNavigationStack: View {
     }
 }
 
-struct HistoryNavigationStack_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-    
-    static var previews: some View {
-        HistoryNavigationStack()
-            .environmentObject(viewModel)
-    }
+#Preview {
+    HistoryNavigationStack()
+        .waterDataContainer(inMemory: true)
 }

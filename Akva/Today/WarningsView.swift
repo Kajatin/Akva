@@ -6,32 +6,38 @@
 //
 
 import SwiftUI
+import SwiftData
+import DiateryWaterData
 
 struct WarningsView: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @Query private var waterData: [WaterData]
     
     var body: some View {
-        if viewModel.showTimeToDrinkWarning() || viewModel.showOffTrackWarning() {
-            VStack(alignment: .leading) {
-                Text("Alerts")
-                    .font(.title2)
-                    .bold()
-                VStack(spacing: 15) {
-                    if viewModel.showTimeToDrinkWarning() {
-                        TimeToDrink()
+        if let data = waterData.first {
+            if data.showTimeToDrinkWarning || data.showOffTrackWarning {
+                VStack(alignment: .leading) {
+                    Text("Alerts")
+                        .font(.title2)
+                        .bold()
+                    VStack(spacing: 15) {
+                        if data.showTimeToDrinkWarning {
+                            TimeToDrink()
+                        }
+                        if data.showOffTrackWarning {
+                            OffTrackToCompleteGoal()
+                        }
                     }
-                    if viewModel.showOffTrackWarning() {
-                        OffTrackToCompleteGoal()
-                    }
+                    .labelStyle(AquaWarningLabelStyle())
                 }
-                .labelStyle(AquaWarningLabelStyle())
             }
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
 
 struct TimeToDrink: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @Query private var waterData: [WaterData]
     
     private let volumeAmounts = [100, 200, 250, 300]
     
@@ -39,60 +45,68 @@ struct TimeToDrink: View {
     @State private var isPresentingConfirm: Bool = false
     
     var body: some View {
-        GroupBox(label: Label("Important", systemImage: "exclamationmark.triangle")) {
-            VStack(alignment: .leading) {
-                Text("You have not drunk in a long time")
-                    .font(.headline)
-                    .bold()
-                    .padding(.top, 1)
-                
-                Divider()
-                
-                Picker("Volume", selection: $selectedVolume) {
-                    ForEach(volumeAmounts, id: \.self) { volume in
-                        Text("\(volume)")
+        if let data = waterData.first {
+            GroupBox(label: Label("Important", systemImage: "exclamationmark.triangle")) {
+                VStack(alignment: .leading) {
+                    Text("You have not drunk in a long time")
+                        .font(.headline)
+                        .bold()
+                        .padding(.top, 1)
+                    
+                    Divider()
+                    
+                    Picker("Volume", selection: $selectedVolume) {
+                        ForEach(volumeAmounts, id: \.self) { volume in
+                            Text("\(volume)")
+                        }
                     }
-                }
-                .pickerStyle(.segmented)
-                .padding(.top, 4)
-                
-                Button {
-                    isPresentingConfirm = true
-                } label: {
-                    Text("Add drink")
-                        .padding(.vertical, 4)
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .padding(.top, 2)
-                .confirmationDialog("Do you want to add \(selectedVolume) mL?", isPresented: $isPresentingConfirm, titleVisibility: .visible) {
-                    Button("Add drink") {
-                        viewModel.registerDrink(volume: Double(selectedVolume), date: Date.now)
+                    .pickerStyle(.segmented)
+                    .padding(.top, 4)
+                    
+                    Button {
+                        isPresentingConfirm = true
+                    } label: {
+                        Text("Add drink")
+                            .padding(.vertical, 4)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding(.top, 2)
+                    .confirmationDialog("Do you want to add \(selectedVolume) mL?", isPresented: $isPresentingConfirm, titleVisibility: .visible) {
+                        Button("Add drink") {
+                            data.addConsumption(quantity: Double(selectedVolume), date: .now)
+                        }
                     }
                 }
             }
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
 
 struct OffTrackToCompleteGoal: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @Query private var waterData: [WaterData]
     
     var body: some View {
-        GroupBox(label: Label("Important", systemImage: "exclamationmark.triangle")) {
-            VStack(alignment: .leading) {
-                Text("You are off track to reach your target")
-                    .font(.headline)
-                    .bold()
-                    .padding(.top, 1)
-                
-                Divider()
-                
+        if let data = waterData.first {
+            GroupBox(label: Label("Important", systemImage: "exclamationmark.triangle")) {
                 VStack(alignment: .leading) {
-                    ConsumptionBar(consumption: viewModel.projected, ratio: CGFloat(viewModel.progress / viewModel.target), fill: Color.accentColor, legend: "Projected")
-                    ConsumptionBar(consumption: viewModel.target, ratio: 1, fill: Color.secondary, legend: "Target")
+                    Text("You are off track to reach your target")
+                        .font(.headline)
+                        .bold()
+                        .padding(.top, 1)
+                    
+                    Divider()
+                    
+                    VStack(alignment: .leading) {
+                        ConsumptionBar(consumption: data.projected, ratio: CGFloat(data.progress / data.target), fill: Color.accentColor, legend: "Projected")
+                        ConsumptionBar(consumption: data.target, ratio: 1, fill: Color.secondary, legend: "Target")
+                    }
                 }
             }
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
@@ -104,10 +118,7 @@ struct AquaWarningLabelStyle: LabelStyle {
     }
 }
 
-struct WarningsView_Previews: PreviewProvider {
-    static let viewModel = ViewModel()
-    
-    static var previews: some View {
-        WarningsView().environmentObject(viewModel)
-    }
+#Preview {
+    WarningsView()
+        .waterDataContainer(inMemory: true)
 }

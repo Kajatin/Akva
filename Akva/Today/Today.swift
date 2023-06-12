@@ -9,30 +9,42 @@ import SwiftUI
 import SwiftData
 import DiateryWaterData
 
-struct TodayN: View {
-    @EnvironmentObject var viewModel: ViewModel
-    @State private var showAddDrinkSheet = false
-    
+struct Today: View {
     @Query private var waterData: [WaterData]
+    @State private var showAddDrinkSheet = false
     
     var body: some View {
         if let data = waterData.first {
             VStack {
-                Text("Some data: \(data.samples.count)")
-                Text("Progress: \(data.progress)")
+                Text("\(data.progress)")
+                Text("\(data.samples.count)")
+            }
+            .toolbar {
                 Button {
-                    data.addConsumption(quantity: 200, date: .now)
+                    showAddDrinkSheet.toggle()
                 } label: {
-                    Text("Add")
-                }.padding(.bottom, 40)
+                    ZStack {
+                        Image(systemName: "plus")
+                        if (data.timeToDrink) {
+                            Image(systemName: "circle.fill")
+                                .offset(x: 21, y: -21)
+                                .scaleEffect(0.5)
+                        }
+                    }
+                    .foregroundColor(.accentColor)
+                    .animation(.spring(), value: data.timeToDrink)
+                }
+            }
+            .sheet(isPresented: $showAddDrinkSheet) {
+                RegisterWaterIntake()
             }
         } else {
-            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
+            Text("No data")
         }
     }
 }
 
-struct Today: View {
+struct TodayO: View {
     @Query private var waterData: [WaterData]
     @State private var showAddDrinkSheet = false
     
