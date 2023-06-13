@@ -15,41 +15,6 @@ struct Today: View {
     
     var body: some View {
         if let data = waterData.first {
-            VStack {
-                Text("\(data.progress)")
-                Text("\(data.samples.count)")
-            }
-            .toolbar {
-                Button {
-                    showAddDrinkSheet.toggle()
-                } label: {
-                    ZStack {
-                        Image(systemName: "plus")
-                        if (data.timeToDrink) {
-                            Image(systemName: "circle.fill")
-                                .offset(x: 21, y: -21)
-                                .scaleEffect(0.5)
-                        }
-                    }
-                    .foregroundColor(.accentColor)
-                    .animation(.spring(), value: data.timeToDrink)
-                }
-            }
-            .sheet(isPresented: $showAddDrinkSheet) {
-                RegisterWaterIntake()
-            }
-        } else {
-            Text("No data")
-        }
-    }
-}
-
-struct TodayO: View {
-    @Query private var waterData: [WaterData]
-    @State private var showAddDrinkSheet = false
-    
-    var body: some View {
-        if let data = waterData.first {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     CircularProgressBar(radius: 125)
@@ -77,7 +42,7 @@ struct TodayO: View {
                             HStack {
                                 Text("Target")
                                 Spacer()
-                                Text("\(data.target) mL")
+                                Text("\(data.target.formatted()) mL")
                                 Image(systemName: "chevron.right")
                             }
                             .padding(.vertical, 6)
@@ -95,13 +60,14 @@ struct TodayO: View {
                             Image(systemName: "plus")
                             if (data.timeToDrink) {
                                 Image(systemName: "circle.fill")
-                                    .offset(x: 21, y: -21)
-                                    .scaleEffect(0.5)
+                                    .offset(x: 25, y: -25)
+                                    .scaleEffect(0.45)
                             }
                         }
                         .foregroundColor(.accentColor)
                         .animation(.spring(), value: data.timeToDrink)
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .sheet(isPresented: $showAddDrinkSheet) {
