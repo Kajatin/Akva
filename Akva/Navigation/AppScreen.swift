@@ -44,7 +44,7 @@ extension AppScreen {
     var badge: Int {
         switch self {
         case .today:
-            NotificationManagerNew.shared.badge
+            NotificationManager.shared.badge
         default:
             0
         }

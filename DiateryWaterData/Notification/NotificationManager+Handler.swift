@@ -11,7 +11,7 @@ import UserNotifications
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "Notification")
 
-extension NotificationManagerNew {
+extension NotificationManager {
     internal func scheduleTimeToDrinkNotification(timeInterval: TimeInterval, dateWhenShows: Date?, onError: @escaping (Error?) -> Void) {
         let content = UNMutableNotificationContent()
         content.title = "Take a Sip"
@@ -29,7 +29,7 @@ extension NotificationManagerNew {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
 
         // Create the request
-        let request = UNNotificationRequest(identifier: NotificationManagerNew.notificationTimeToDrinkIdentifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: NotificationManager.notificationTimeToDrinkIdentifier, content: content, trigger: trigger)
 
         // Schedule the request with the system
         notificationCenter.add(request, withCompletionHandler: onError)
@@ -38,7 +38,7 @@ extension NotificationManagerNew {
     }
 
     internal func cancelPreviousNotifications() {
-        notificationCenter.removeDeliveredNotifications(withIdentifiers: [NotificationManagerNew.notificationTimeToDrinkIdentifier])
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: [NotificationManagerNew.notificationTimeToDrinkIdentifier])
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: [NotificationManager.notificationTimeToDrinkIdentifier])
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [NotificationManager.notificationTimeToDrinkIdentifier])
     }
 }

@@ -11,8 +11,8 @@ import UserNotifications
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "Notification")
 
-public class NotificationManagerNew {
-    public static let shared = NotificationManagerNew()
+public class NotificationManager {
+    public static let shared = NotificationManager()
     
     public var badge: Int = 3
     public var timeToDrink: Bool = false
@@ -50,6 +50,6 @@ public class NotificationManagerNew {
     }
 }
 
-public extension NotificationManagerNew {
+public extension NotificationManager {
     static let notificationTimeToDrinkIdentifier = "time-to-drink"
 }

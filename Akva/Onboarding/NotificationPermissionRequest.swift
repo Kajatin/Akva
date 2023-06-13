@@ -40,10 +40,10 @@ struct NotificationPermissionRequest: View {
             
             Button {
                 Task {
-                    if await (!NotificationManagerNew.shared.isNotificationsAuthorized()) {
+                    if await (!NotificationManager.shared.isNotificationsAuthorized()) {
                         do {
                             notificationsProcessing = true
-                            let _ = try await NotificationManagerNew.shared.requestAuthorization()
+                            let _ = try await NotificationManager.shared.requestAuthorization()
                         } catch {
                             print("Could not request Notification permissions.")
                         }
@@ -51,7 +51,7 @@ struct NotificationPermissionRequest: View {
                         notificationsProcessing = false
                     }
                     
-                    if await (NotificationManagerNew.shared.isNotificationsAuthorized()) {
+                    if await (NotificationManager.shared.isNotificationsAuthorized()) {
                         onboardingSteps.append(.settings)
                     } else {
                         showDeniedAlert = true

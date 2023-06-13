@@ -18,7 +18,7 @@ class NotificationManagerDelegate: NSObject, UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter,
                                        willPresent notification: UNNotification,
                                        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if (notification.request.identifier == NotificationManagerNew.notificationTimeToDrinkIdentifier) {
+        if (notification.request.identifier == NotificationManager.notificationTimeToDrinkIdentifier) {
             onNotification()
         }
         

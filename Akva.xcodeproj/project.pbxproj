@@ -37,7 +37,6 @@
 		4C354BD528ECC26800AE37D0 /* AkvaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C41047C28CE206700948B08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
 		4C41047E28CE214700948B08 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047D28CE214700948B08 /* ViewModel.swift */; };
-		4C57534028E97ABD0030D889 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57533F28E97ABD0030D889 /* NotificationManager.swift */; };
 		4C589A0B28E4DC8C00E14BE8 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */; };
 		4C589A0D28E6B5C300E14BE8 /* WarningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */; };
 		4C589A1028E84D6700E14BE8 /* HealthPermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0F28E84D6700E14BE8 /* HealthPermissionRequest.swift */; };
@@ -49,7 +48,6 @@
 		4CE327B4296DFFDF0021B336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B3296DFFDF0021B336 /* Assets.xcassets */; };
 		4CE327B7296DFFDF0021B336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */; };
 		4CE327C0296E051C0021B336 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
-		4CE327C9296E05280021B336 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C57533F28E97ABD0030D889 /* NotificationManager.swift */; };
 		4CE327CB296E05280021B336 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047D28CE214700948B08 /* ViewModel.swift */; };
 		4CE327CE296E06C70021B336 /* AkvaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C228CD27230017C1AE /* AkvaApp.swift */; };
 /* End PBXBuildFile section */
@@ -113,7 +111,6 @@
 		4C354BD228ECC26800AE37D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C41047B28CE206700948B08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4C41047D28CE214700948B08 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		4C57533F28E97ABD0030D889 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsView.swift; sourceTree = "<group>"; };
 		4C589A0E28E8392100E14BE8 /* Akva.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Akva.entitlements; sourceTree = "<group>"; };
@@ -316,7 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				4C41047D28CE214700948B08 /* ViewModel.swift */,
-				4C57533F28E97ABD0030D889 /* NotificationManager.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -491,7 +487,6 @@
 				4C2854B72A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
 				4C589A0B28E4DC8C00E14BE8 /* StatsView.swift in Sources */,
 				4C2854A92A35056D00971889 /* AppTabView.swift in Sources */,
-				4C57534028E97ABD0030D889 /* NotificationManager.swift in Sources */,
 				4C2854A72A35037C00971889 /* AppScreen.swift in Sources */,
 				4C1564C528CD27230017C1AE /* ContentView.swift in Sources */,
 				4C2854BD2A35103500971889 /* Today.swift in Sources */,
@@ -522,7 +517,6 @@
 			files = (
 				4CE327C0296E051C0021B336 /* Model.swift in Sources */,
 				4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */,
-				4CE327C9296E05280021B336 /* NotificationManager.swift in Sources */,
 				4CE327CB296E05280021B336 /* ViewModel.swift in Sources */,
 				4CE327CE296E06C70021B336 /* AkvaApp.swift in Sources */,
 			);

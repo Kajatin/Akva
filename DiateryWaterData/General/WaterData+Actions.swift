@@ -20,7 +20,7 @@ extension WaterData {
                 self.samples.append(sample)
                 
                 // Cancel pending time-to-drink notifications
-                NotificationManagerNew.shared.cancelPreviousNotifications()
+                NotificationManager.shared.cancelPreviousNotifications()
                 
                 if (self.progress >= self.target) {
                     return
@@ -33,7 +33,7 @@ extension WaterData {
                 let timeInterval = (averageIntake * Double(timeUntilMidnight)) / Double(self.remainder)
                 let fireIn: Double = min(timeInterval, self.notificationInterval)
                 let dateWhenNotificationShows = Date(timeInterval: fireIn, since: date)
-                NotificationManagerNew.shared.scheduleTimeToDrinkNotification(timeInterval: fireIn, dateWhenShows: dateWhenNotificationShows) { error in
+                NotificationManager.shared.scheduleTimeToDrinkNotification(timeInterval: fireIn, dateWhenShows: dateWhenNotificationShows) { error in
                     if error != nil {
                         logger.error("Error while scheduling new notification: \(String(describing: error))")
                         // Handle any errors.

@@ -24,17 +24,17 @@ class ViewModel: ObservableObject {
 
     private var healthWaterDataAvailable = false
 
-    private var notificationManager: NotificationManager?
+//    private var notificationManager: NotificationManager?
     private var notificationAuthorized = false
     private func scheduleNotification() {
-        if (showTimeToDrinkWarning() && healthWaterDataAvailable) {
-            notificationManager!.cancelPreviousNotifications()
-            notificationManager!.scheduleTimeToDrinkNotification(timeInterval: 5, dateWhenShows: nil) { error in
-                if error != nil {
-                    // Handle any errors.
-                }
-            }
-        }
+//        if (showTimeToDrinkWarning() && healthWaterDataAvailable) {
+//            notificationManager!.cancelPreviousNotifications()
+//            notificationManager!.scheduleTimeToDrinkNotification(timeInterval: 5, dateWhenShows: nil) { error in
+//                if error != nil {
+//                    // Handle any errors.
+//                }
+//            }
+//        }
     }
 
     private func setSharedData() {
@@ -58,21 +58,21 @@ class ViewModel: ObservableObject {
             self.model = Model()
         }
 
-        notificationManager = NotificationManager() {
-            self.model.timeToDrink = true
-            self.model.timeToDrinkNotification = true
-        }
-
-        // Request notification authorization if it's not already given
-        notificationManager!.isAuthorization { settings in
-            if (settings.authorizationStatus == .notDetermined) {
-                self.model.showNotificationRequest = true
-            }
-            self.notificationAuthorized = settings.authorizationStatus == .authorized
-        }
-        // TODO: if we are denied authorization, we should occasionally request it again (maybe)
-        // Cancel pending time-to-drink notifications
-        notificationManager!.cancelPreviousNotifications()
+//        notificationManager = NotificationManager() {
+//            self.model.timeToDrink = true
+//            self.model.timeToDrinkNotification = true
+//        }
+//
+//        // Request notification authorization if it's not already given
+//        notificationManager!.isAuthorization { settings in
+//            if (settings.authorizationStatus == .notDetermined) {
+//                self.model.showNotificationRequest = true
+//            }
+//            self.notificationAuthorized = settings.authorizationStatus == .authorized
+//        }
+//        // TODO: if we are denied authorization, we should occasionally request it again (maybe)
+//        // Cancel pending time-to-drink notifications
+//        notificationManager!.cancelPreviousNotifications()
 
         setSharedData()
         scheduleNotification()
@@ -239,26 +239,26 @@ class ViewModel: ObservableObject {
     }
 
     func requestNotificationPermissions(skipped: Bool = false) {
-        if !skipped {
-            notificationManager!.requestAuthorization { (granted, error) in
-                if let error = error {
-                    // Handle the error here.
-                    print(error)
-                }
-
-                // Enable or disable features based on the authorization.
-
-                // Check if we're authorized to send notifications
-                self.notificationManager!.isAuthorization { settings in
-                    self.notificationAuthorized = settings.authorizationStatus == .authorized
-                }
-                // TODO: if we are denied authorization, we should occasionally request it again (maybe)
-                // Cancel pending time-to-drink notifications
-                self.notificationManager!.cancelPreviousNotifications()
-            }
-        }
-
-        model.showNotificationRequest = false
+//        if !skipped {
+//            notificationManager!.requestAuthorization { (granted, error) in
+//                if let error = error {
+//                    // Handle the error here.
+//                    print(error)
+//                }
+//
+//                // Enable or disable features based on the authorization.
+//
+//                // Check if we're authorized to send notifications
+//                self.notificationManager!.isAuthorization { settings in
+//                    self.notificationAuthorized = settings.authorizationStatus == .authorized
+//                }
+//                // TODO: if we are denied authorization, we should occasionally request it again (maybe)
+//                // Cancel pending time-to-drink notifications
+//                self.notificationManager!.cancelPreviousNotifications()
+//            }
+//        }
+//
+//        model.showNotificationRequest = false
     }
 
     func normalizedProgress(for date: Date) -> CGFloat {
@@ -293,7 +293,7 @@ class ViewModel: ObservableObject {
         model.timeToDrink = false
 
         // Cancel pending time-to-drink notifications
-        notificationManager!.cancelPreviousNotifications()
+//        notificationManager!.cancelPreviousNotifications()
 
         if (progress >= target) {
             return
@@ -306,11 +306,11 @@ class ViewModel: ObservableObject {
         let timeInterval = (averageIntake * Double(timeUntilMidnight)) / Double(remainder)
         let fireIn: Double = min(timeInterval, model.notificationInterval)
         let dateWhenNotificationShows = Date(timeInterval: fireIn, since: date)
-        notificationManager!.scheduleTimeToDrinkNotification(timeInterval: fireIn, dateWhenShows: dateWhenNotificationShows) { error in
-            if error != nil {
-                // Handle any errors.
-            }
-        }
+//        notificationManager!.scheduleTimeToDrinkNotification(timeInterval: fireIn, dateWhenShows: dateWhenNotificationShows) { error in
+//            if error != nil {
+//                // Handle any errors.
+//            }
+//        }
     }
 
     func resetSettings() {
