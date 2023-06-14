@@ -28,6 +28,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(ViewModel())
         .waterDataContainer(inMemory: true)
 }

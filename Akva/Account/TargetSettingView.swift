@@ -10,32 +10,29 @@ import SwiftData
 import DiateryWaterData
 
 struct TargetSettingView: View {
-    @Query private var waterData: [WaterData]
-    // TODO: this is temporary because the $data.target binding wasn't compiling
-    @State private var target: Double = 3000
+    @Bindable var data: WaterData
+    public init(data: WaterData) {
+        self._data = Bindable(wrappedValue: data)
+    }
 
     private var volumes: [Double] = Array(stride(from: 500.0, through: 5000.0, by: 100.0))
 
     var body: some View {
-        if let data = waterData.first {
-            Form {
-                Section("Target water intake") {
-                    Picker("Target", selection: $target) {
-                        ForEach(volumes, id:\.self) { volume in
-                            Text("\(volume.formatted()) mL")
-                        }
+        Form {
+            Section("Target water intake") {
+                Picker("Target", selection: $data.target) {
+                    ForEach(volumes, id:\.self) { volume in
+                        Text("\(volume.formatted()) mL")
                     }
-                    .pickerStyle(.wheel)
                 }
+                .pickerStyle(.wheel)
             }
-            .navigationTitle("Settings")
-        } else {
-            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
+        .navigationTitle("Settings")
     }
 }
 
-#Preview {
-    TargetSettingView()
-        .waterDataContainer(inMemory: true)
-}
+//#Preview {
+//    TargetSettingView()
+//        .waterDataContainer(inMemory: true)
+//}

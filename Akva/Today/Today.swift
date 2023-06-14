@@ -37,7 +37,7 @@ struct Today: View {
                         .buttonStyle(.bordered)
                         
                         NavigationLink {
-                            TargetSettingView()
+                            TargetSettingView(data: data)
                         } label: {
                             HStack {
                                 Text("Target")

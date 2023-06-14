@@ -27,8 +27,8 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
         guard let lastSyncDate = lastSyncDate else {
             return true
         }
-        let oneHourAgo = Calendar.current.date(byAdding: .minute, value: -syncIntervalMinutes, to: Date())!
-        return lastSyncDate < oneHourAgo
+        let someTimeAgo = Calendar.current.date(byAdding: .minute, value: -syncIntervalMinutes, to: Date())!
+        return lastSyncDate < someTimeAgo
     }
 
     public init() {

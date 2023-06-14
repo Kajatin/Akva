@@ -19,6 +19,5 @@ struct TodayNavigationStack: View {
 
 #Preview {
     TodayNavigationStack()
-        .environmentObject(ViewModel())
         .waterDataContainer(inMemory: true)
 }

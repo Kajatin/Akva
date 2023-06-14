@@ -35,11 +35,12 @@ extension WaterData {
                 let dateWhenNotificationShows = Date(timeInterval: fireIn, since: date)
                 NotificationManager.shared.scheduleTimeToDrinkNotification(timeInterval: fireIn, dateWhenShows: dateWhenNotificationShows) { error in
                     if error != nil {
+                        self.error = error
                         logger.error("Error while scheduling new notification: \(String(describing: error))")
-                        // Handle any errors.
                     }
                 }
             } else {
+                self.error = error
                 logger.error("Failed to add water sample to Apple Health: \(String(describing: error))")
             }
         }

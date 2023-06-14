@@ -37,6 +37,8 @@
 		4C354BD528ECC26800AE37D0 /* AkvaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C41047C28CE206700948B08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
 		4C41047E28CE214700948B08 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047D28CE214700948B08 /* ViewModel.swift */; };
+		4C4819A52A3A55F000DA0E5D /* DiateryWaterData in Frameworks */ = {isa = PBXBuildFile; productRef = 4C4819A42A3A55F000DA0E5D /* DiateryWaterData */; };
+		4C4819AC2A3A5AC700DA0E5D /* AkvaWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4819AB2A3A5AC700DA0E5D /* AkvaWatchApp.swift */; };
 		4C589A0B28E4DC8C00E14BE8 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */; };
 		4C589A0D28E6B5C300E14BE8 /* WarningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */; };
 		4C589A1028E84D6700E14BE8 /* HealthPermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C589A0F28E84D6700E14BE8 /* HealthPermissionRequest.swift */; };
@@ -47,9 +49,6 @@
 		4CCD45B628E8ED4100D7B767 /* TargetSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */; };
 		4CE327B4296DFFDF0021B336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B3296DFFDF0021B336 /* Assets.xcassets */; };
 		4CE327B7296DFFDF0021B336 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE327B6296DFFDF0021B336 /* Preview Assets.xcassets */; };
-		4CE327C0296E051C0021B336 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047B28CE206700948B08 /* Model.swift */; };
-		4CE327CB296E05280021B336 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41047D28CE214700948B08 /* ViewModel.swift */; };
-		4CE327CE296E06C70021B336 /* AkvaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C228CD27230017C1AE /* AkvaApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +110,7 @@
 		4C354BD228ECC26800AE37D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C41047B28CE206700948B08 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4C41047D28CE214700948B08 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4C4819AB2A3A5AC700DA0E5D /* AkvaWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkvaWatchApp.swift; sourceTree = "<group>"; };
 		4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningsView.swift; sourceTree = "<group>"; };
 		4C589A0E28E8392100E14BE8 /* Akva.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Akva.entitlements; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4819A52A3A55F000DA0E5D /* DiateryWaterData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +161,8 @@
 			children = (
 				4CF6E90228EE1E0E00645F76 /* AkvaWidgetExtension.entitlements */,
 				4C1564C128CD27230017C1AE /* Akva */,
-				4C354BCD28ECC26700AE37D0 /* AkvaWidget */,
 				4CE327AE296DFFDE0021B336 /* Akva Watch App */,
+				4C354BCD28ECC26700AE37D0 /* AkvaWidget */,
 				4C2854942A3274DC00971889 /* DiateryWaterData */,
 				4C354BB128EC081400AE37D0 /* Frameworks */,
 				4C1564C028CD27230017C1AE /* Products */,
@@ -322,8 +323,9 @@
 			children = (
 				4C137F2D2972EE5500F5247B /* Akva-Watch-App-Info.plist */,
 				4CE327CF296E074A0021B336 /* Akva Watch App.entitlements */,
-				4CE327D0296E08510021B336 /* ContentView.swift */,
 				4CE327B3296DFFDF0021B336 /* Assets.xcassets */,
+				4C4819AB2A3A5AC700DA0E5D /* AkvaWatchApp.swift */,
+				4CE327D0296E08510021B336 /* ContentView.swift */,
 				4CE327B5296DFFDF0021B336 /* Preview Content */,
 			);
 			path = "Akva Watch App";
@@ -392,6 +394,9 @@
 			dependencies = (
 			);
 			name = "Akva Watch App";
+			packageProductDependencies = (
+				4C4819A42A3A55F000DA0E5D /* DiateryWaterData */,
+			);
 			productName = "Akva Watch App";
 			productReference = 4CE327AD296DFFDE0021B336 /* Akva Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -431,8 +436,8 @@
 			projectRoot = "";
 			targets = (
 				4C1564BE28CD27230017C1AE /* Akva */,
-				4C354BC928ECC26700AE37D0 /* AkvaWidgetExtension */,
 				4CE327AC296DFFDE0021B336 /* Akva Watch App */,
+				4C354BC928ECC26700AE37D0 /* AkvaWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -515,10 +520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE327C0296E051C0021B336 /* Model.swift in Sources */,
+				4C4819AC2A3A5AC700DA0E5D /* AkvaWatchApp.swift in Sources */,
 				4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */,
-				4CE327CB296E05280021B336 /* ViewModel.swift in Sources */,
-				4CE327CE296E06C70021B336 /* AkvaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +812,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Akva Watch App/Akva Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Akva Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = T2HL3ZXJQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -845,7 +848,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Akva Watch App/Akva Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Akva Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = T2HL3ZXJQU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -916,6 +919,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		4C2854952A32752D00971889 /* DiateryWaterData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DiateryWaterData;
+		};
+		4C4819A42A3A55F000DA0E5D /* DiateryWaterData */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DiateryWaterData;
 		};
