@@ -11,31 +11,24 @@ import UserNotifications
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "Notification")
 
+@Observable
 public class NotificationManager {
     public static let shared = NotificationManager()
     
-    public var badge: Int = 3
+    public var badge: Int = 0
     public var timeToDrink: Bool = false
     internal let notificationCenter: UNUserNotificationCenter
-    lazy private var delegate: NotificationManagerDelegate = {
-        return NotificationManagerDelegate() { [weak self] in
-            DispatchQueue.main.async {
-                self?.timeToDrink = true
-                
-                let modelContext = ModelContext(WaterData.container)
-                guard let waterData = try! modelContext.fetch(FetchDescriptor<WaterData>()).first else {
-                    logger.warning("No ModelContext for WaterData")
-                    return
-                }
-                
-                waterData.timeToDrink = true
-                logger.info("\(waterData.timeToDrink)")
-            }
-        }
-    }()
+    private var delegate: NotificationManagerDelegate? = nil
 
     private init() {
         notificationCenter = UNUserNotificationCenter.current()
+        delegate = NotificationManagerDelegate() { content in
+            DispatchQueue.main.async {
+                self.timeToDrink = true
+                self.badge = content.badge?.intValue ?? 0
+                logger.info("\(self.timeToDrink)")
+            }
+        }
         notificationCenter.delegate = delegate
     }
 

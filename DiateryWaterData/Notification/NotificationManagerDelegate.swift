@@ -9,9 +9,9 @@ import Foundation
 import UserNotifications
 
 class NotificationManagerDelegate: NSObject, UNUserNotificationCenterDelegate {
-    private let onNotification: () -> Void
+    private let onNotification: (UNNotificationContent) -> Void
     
-    init(onTimeToDrink: @escaping () -> Void) {
+    init(onTimeToDrink: @escaping (UNNotificationContent) -> Void) {
         onNotification = onTimeToDrink
     }
     
@@ -19,7 +19,7 @@ class NotificationManagerDelegate: NSObject, UNUserNotificationCenterDelegate {
                                        willPresent notification: UNNotification,
                                        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         if (notification.request.identifier == NotificationManager.notificationTimeToDrinkIdentifier) {
-            onNotification()
+            onNotification(notification.request.content)
         }
         
         completionHandler(.sound)

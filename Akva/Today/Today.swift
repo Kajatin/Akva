@@ -58,14 +58,14 @@ struct Today: View {
                     } label: {
                         ZStack {
                             Image(systemName: "plus")
-                            if (data.timeToDrink) {
+                            if (NotificationManager.shared.timeToDrink) {
                                 Image(systemName: "circle.fill")
                                     .offset(x: 25, y: -25)
                                     .scaleEffect(0.45)
                             }
                         }
                         .foregroundColor(.accentColor)
-                        .animation(.spring(), value: data.timeToDrink)
+                        .animation(.spring(), value: NotificationManager.shared.timeToDrink)
                     }
                     .buttonStyle(PlainButtonStyle())
                 }

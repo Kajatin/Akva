@@ -16,7 +16,7 @@ extension WaterData {
         HealthStoreManager.shared.writeWaterSample(sample) { success, error in
             if (success) {
                 logger.info("Successfully added new water sample to Apple Health")
-                self.timeToDrink = false
+                self.lastUpdated = .now
                 self.samples.append(sample)
                 
                 // Cancel pending time-to-drink notifications

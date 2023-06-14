@@ -38,6 +38,8 @@ extension NotificationManager {
     }
 
     internal func cancelPreviousNotifications() {
+        badge = 0
+        timeToDrink = false
         notificationCenter.removeDeliveredNotifications(withIdentifiers: [NotificationManager.notificationTimeToDrinkIdentifier])
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [NotificationManager.notificationTimeToDrinkIdentifier])
     }

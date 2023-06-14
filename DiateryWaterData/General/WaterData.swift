@@ -14,14 +14,14 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
 
 @Model public class WaterData {
     public var target: Double = 3000
-    public var timeToDrink: Bool = false
+    public var lastUpdated: Date? = nil
     public var lastSyncDate: Date? = nil
     public var notificationInterval: Double = 3600
     @Transient public var error: Error? = nil
     @Transient public var samples: [HKQuantitySample] = []
-    
+
     private let syncIntervalMinutes: Int = 30
-    
+
     /// Determines whether data should be synced from Apple Health.
     @Transient public var requiresSyncing: Bool {
         guard let lastSyncDate = lastSyncDate else {
