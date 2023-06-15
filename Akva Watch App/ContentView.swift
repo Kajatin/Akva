@@ -18,7 +18,20 @@ struct ContentView: View {
     @State private var selectedTab: Int = 2
     
     var body: some View {
-        Text("Hello World")
+        if let data = waterData.first {
+            TabView {
+                Overview(data: data)
+                Text("Water")
+                Text("Food")
+                //        List {
+                //            VisitorView()
+                //                .navigationTitle("Visitors")
+                //        }
+            }
+            .tabViewStyle(.verticalPage)
+        } else {
+            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
+        }
     }
     
 //    var body: some View {
