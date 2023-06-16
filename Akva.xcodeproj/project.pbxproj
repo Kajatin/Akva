@@ -47,6 +47,7 @@
 		4C768E902A3CFA68000D21CC /* WidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E8F2A3CFA68000D21CC /* WidgetsBundle.swift */; };
 		4C768E942A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E932A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift */; };
 		4C768E962A3D01FC000D21CC /* AkvaWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E952A3D01FC000D21CC /* AkvaWidgetView.swift */; };
+		4C768E982A3D1E5B000D21CC /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */; };
 		4C8351252A3B8E3000F6ED57 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351242A3B8E3000F6ED57 /* CircularProgressBar.swift */; };
 		4C8351272A3B93D000F6ED57 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351262A3B93D000F6ED57 /* Details.swift */; };
 		4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE327D0296E08510021B336 /* ContentView.swift */; };
@@ -125,6 +126,7 @@
 		4C768E8F2A3CFA68000D21CC /* WidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsBundle.swift; sourceTree = "<group>"; };
 		4C768E932A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkvaSnapshotTimelineProvider.swift; sourceTree = "<group>"; };
 		4C768E952A3D01FC000D21CC /* AkvaWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkvaWidgetView.swift; sourceTree = "<group>"; };
+		4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4C8351242A3B8E3000F6ED57 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4C8351262A3B93D000F6ED57 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				4C354BCE28ECC26700AE37D0 /* AkvaWidget.swift */,
 				4C768E952A3D01FC000D21CC /* AkvaWidgetView.swift */,
 				4C768E932A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift */,
+				4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				4C768E902A3CFA68000D21CC /* WidgetsBundle.swift in Sources */,
 				4C768E962A3D01FC000D21CC /* AkvaWidgetView.swift in Sources */,
 				4C768E942A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift in Sources */,
+				4C768E982A3D1E5B000D21CC /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

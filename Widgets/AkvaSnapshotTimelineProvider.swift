@@ -10,8 +10,6 @@ import SwiftData
 import WidgetKit
 import DiateryWaterData
 
-private let logger = Logger(subsystem: "Widgets", category: "AkvaSnapshotTimelineProvider")
-
 struct AkvaWidgetEntry: TimelineEntry {
     var data: WaterData?
     let date: Date
