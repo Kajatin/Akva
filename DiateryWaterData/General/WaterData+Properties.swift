@@ -96,4 +96,17 @@ extension WaterData {
         })
         return sum / target
     }
+    
+    public var dailyRecords: Dictionary<Date, Double> {
+        let groupedByDay = Dictionary(grouping: samples, by: {
+            let components = Calendar.current.dateComponents([.year, .month, .day], from: $0.endDate)
+            return Calendar.current.date(from: components)!
+        })
+        return groupedByDay.mapValues {
+            let sum = $0.reduce(0, { sum, record in
+                sum + record.quantity.doubleValue(for: .literUnit(with: .milli))
+            })
+            return sum
+        }
+    }
 }
