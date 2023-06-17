@@ -148,6 +148,7 @@ struct DayLetter: Identifiable {
 
 struct MonthView<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
+    @Environment(\.colorScheme) var colorScheme
     
     let month: Date
     let showHeader: Bool
@@ -198,7 +199,7 @@ struct MonthView<DateView>: View where DateView: View {
                 header
             }
             
-            HStack(alignment: .center, spacing: 8) {
+            HStack(alignment: .center, spacing: 6) {
                 ForEach(dayLetters, id: \.id) { letter in
                     Spacer()
                     Text(letter.name)
@@ -211,6 +212,26 @@ struct MonthView<DateView>: View where DateView: View {
             ForEach(weeks, id: \.self) { week in
                 WeekView(week: week, content: self.content)
             }
+        }
+        .padding()
+        .background(Color.gray.opacity(colorScheme == .dark ? 0.10 : 0.05))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+struct AdaptiveStack<Content: View>: View {
+    var horizontalCount: Int
+    let content: () -> Content
+    
+    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    var body: some View {
+        if horizontalSizeClass == .compact {
+            VStack(content: content)
+        } else {
+            let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: horizontalCount)
+            LazyVGrid(columns: columns, content: content)
         }
     }
 }
@@ -235,7 +256,7 @@ struct CalendarProgressView<DateView>: View where DateView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
+            AdaptiveStack(horizontalCount: 2) {
                 ForEach(months, id: \.self) { month in
                     MonthView(month: month, content: self.content)
                 }
