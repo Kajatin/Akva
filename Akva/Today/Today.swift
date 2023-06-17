@@ -21,53 +21,25 @@ struct Today: View {
                         .padding(.top, 40)
                     WarningsView()
                     StatsView()
-                    
-                    VStack {
-                        NavigationLink {
-                            AllDrinkData()
-                        } label: {
-                            HStack {
-                                Text("Show All Data")
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
-                            .padding(.vertical, 6)
-                        }
-                        .foregroundColor(.primary)
-                        .buttonStyle(.bordered)
-                        
-                        NavigationLink {
-                            TargetSettingView(data: data)
-                        } label: {
-                            HStack {
-                                Text("Target")
-                                Spacer()
-                                Text("\(data.target.formatted()) mL")
-                                Image(systemName: "chevron.right")
-                            }
-                            .padding(.vertical, 6)
-                        }
-                        .foregroundColor(.primary)
-                        .buttonStyle(.bordered)
-                    }
                 }
                 .padding(.horizontal)
                 .toolbar {
-                    Button {
-                        showAddDrinkSheet.toggle()
-                    } label: {
-                        ZStack {
-                            Image(systemName: "plus")
-                            if (NotificationManager.shared.timeToDrink) {
-                                Image(systemName: "circle.fill")
-                                    .offset(x: 25, y: -25)
-                                    .scaleEffect(0.45)
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            showAddDrinkSheet.toggle()
+                        } label: {
+                            ZStack {
+                                Image(systemName: "plus")
+                                if (NotificationManager.shared.timeToDrink) {
+                                    Image(systemName: "circle.fill")
+                                        .offset(x: 25, y: -25)
+                                        .scaleEffect(0.45)
+                                }
                             }
+                            .foregroundColor(.accentColor)
+                            .animation(.spring(), value: NotificationManager.shared.timeToDrink)
                         }
-                        .foregroundColor(.accentColor)
-                        .animation(.spring(), value: NotificationManager.shared.timeToDrink)
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .sheet(isPresented: $showAddDrinkSheet) {

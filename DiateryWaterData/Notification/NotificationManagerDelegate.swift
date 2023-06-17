@@ -22,6 +22,10 @@ class NotificationManagerDelegate: NSObject, UNUserNotificationCenterDelegate {
             onNotification(notification.request.content)
         }
         
-        completionHandler(.sound)
+        var options: UNNotificationPresentationOptions = .badge
+        if (NotificationManager.shared.soundEnabled) {
+            options = .sound
+        }
+        completionHandler(options)
     }
 }

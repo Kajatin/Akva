@@ -17,6 +17,8 @@ public class NotificationManager {
     
     public var badge: Int = 0
     public var timeToDrink: Bool = false
+    public var soundEnabled: Bool = true
+    public var notificationEnabled: Bool = true
     internal let notificationCenter: UNUserNotificationCenter
     private var delegate: NotificationManagerDelegate? = nil
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C05C2062A3DCB2C002955FC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05C2052A3DCB2C002955FC /* About.swift */; };
+		4C05C2082A3DCB45002955FC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05C2072A3DCB45002955FC /* PrivacyPolicy.swift */; };
 		4C1564C328CD27230017C1AE /* AkvaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C228CD27230017C1AE /* AkvaApp.swift */; };
 		4C1564C528CD27230017C1AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1564C428CD27230017C1AE /* ContentView.swift */; };
 		4C1564C728CD27240017C1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1564C628CD27240017C1AE /* Assets.xcassets */; };
@@ -22,13 +24,13 @@
 		4C2854AC2A35069500971889 /* TodayNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854AB2A35069500971889 /* TodayNavigationStack.swift */; };
 		4C2854AE2A3507CF00971889 /* RegisterWaterIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */; };
 		4C2854B12A350A4000971889 /* HistoryNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B02A350A4000971889 /* HistoryNavigationStack.swift */; };
-		4C2854B42A350B3600971889 /* AccountNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B32A350B3600971889 /* AccountNavigationStack.swift */; };
+		4C2854B42A350B3600971889 /* SettingsNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B32A350B3600971889 /* SettingsNavigationStack.swift */; };
 		4C2854B72A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B62A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift */; };
 		4C2854B92A350C3000971889 /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854B82A350C3000971889 /* AppSidebarList.swift */; };
 		4C2854BB2A350C3900971889 /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BA2A350C3900971889 /* AppDetailColumn.swift */; };
 		4C2854BD2A35103500971889 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BC2A35103500971889 /* Today.swift */; };
 		4C2854BF2A35115000971889 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854BE2A35115000971889 /* History.swift */; };
-		4C2854C12A35124A00971889 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854C02A35124A00971889 /* Account.swift */; };
+		4C2854C12A35124A00971889 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854C02A35124A00971889 /* SettingsView.swift */; };
 		4C2854C32A3631FF00971889 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2854C22A3631FF00971889 /* Onboarding.swift */; };
 		4C354BCB28ECC26700AE37D0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB228EC081400AE37D0 /* WidgetKit.framework */; };
 		4C354BCC28ECC26700AE37D0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB428EC081400AE37D0 /* SwiftUI.framework */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C05C2052A3DCB2C002955FC /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		4C05C2072A3DCB45002955FC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		4C137F2C2972EE0800F5247B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4C137F2D2972EE5500F5247B /* Akva-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Akva-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4C1564BF28CD27230017C1AE /* Akva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,13 +105,13 @@
 		4C2854AB2A35069500971889 /* TodayNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNavigationStack.swift; sourceTree = "<group>"; };
 		4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWaterIntake.swift; sourceTree = "<group>"; };
 		4C2854B02A350A4000971889 /* HistoryNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationStack.swift; sourceTree = "<group>"; };
-		4C2854B32A350B3600971889 /* AccountNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNavigationStack.swift; sourceTree = "<group>"; };
+		4C2854B32A350B3600971889 /* SettingsNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationStack.swift; sourceTree = "<group>"; };
 		4C2854B62A350BC600971889 /* PrefersTabNavigationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefersTabNavigationEnvironmentKey.swift; sourceTree = "<group>"; };
 		4C2854B82A350C3000971889 /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
 		4C2854BA2A350C3900971889 /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
 		4C2854BC2A35103500971889 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		4C2854BE2A35115000971889 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		4C2854C02A35124A00971889 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		4C2854C02A35124A00971889 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C2854C22A3631FF00971889 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		4C354BB228EC081400AE37D0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4C354BB428EC081400AE37D0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -270,7 +274,6 @@
 				4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */,
 				4C589A0A28E4DC8C00E14BE8 /* StatsView.swift */,
 				4C589A0C28E6B5C300E14BE8 /* WarningsView.swift */,
-				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
 				4C2854AD2A3507CF00971889 /* RegisterWaterIntake.swift */,
 			);
 			path = Today;
@@ -288,8 +291,11 @@
 		4C2854B22A350B2700971889 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				4C2854B32A350B3600971889 /* AccountNavigationStack.swift */,
-				4C2854C02A35124A00971889 /* Account.swift */,
+				4C2854B32A350B3600971889 /* SettingsNavigationStack.swift */,
+				4C2854C02A35124A00971889 /* SettingsView.swift */,
+				4C05C2052A3DCB2C002955FC /* About.swift */,
+				4C05C2072A3DCB45002955FC /* PrivacyPolicy.swift */,
+				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
 				4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */,
 			);
 			path = Account;
@@ -508,14 +514,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2854AE2A3507CF00971889 /* RegisterWaterIntake.swift in Sources */,
-				4C2854B42A350B3600971889 /* AccountNavigationStack.swift in Sources */,
+				4C2854B42A350B3600971889 /* SettingsNavigationStack.swift in Sources */,
 				4C28549B2A3474AF00971889 /* Keys.swift in Sources */,
 				4C2854BB2A350C3900971889 /* AppDetailColumn.swift in Sources */,
-				4C2854C12A35124A00971889 /* Account.swift in Sources */,
+				4C2854C12A35124A00971889 /* SettingsView.swift in Sources */,
 				4C589A0D28E6B5C300E14BE8 /* WarningsView.swift in Sources */,
 				4C589A1028E84D6700E14BE8 /* HealthPermissionRequest.swift in Sources */,
 				4C2854982A346F9C00971889 /* OnboardingFlow.swift in Sources */,
 				4CCD45AE28E87BC300D7B767 /* CircularProgressBar.swift in Sources */,
+				4C05C2062A3DCB2C002955FC /* About.swift in Sources */,
 				4C2854AC2A35069500971889 /* TodayNavigationStack.swift in Sources */,
 				4C2854A02A34B4BF00971889 /* Settings.swift in Sources */,
 				4C28549E2A347C1300971889 /* Welcome.swift in Sources */,
@@ -527,6 +534,7 @@
 				4C2854BD2A35103500971889 /* Today.swift in Sources */,
 				4C2854B92A350C3000971889 /* AppSidebarList.swift in Sources */,
 				4CCD45B228E8865300D7B767 /* AllDrinkData.swift in Sources */,
+				4C05C2082A3DCB45002955FC /* PrivacyPolicy.swift in Sources */,
 				4C2854BF2A35115000971889 /* History.swift in Sources */,
 				4C2854A32A34BA8800971889 /* CodableArray+RawRepresentable.swift in Sources */,
 				4C71421F28F1E56600118584 /* NotificationPermissionRequest.swift in Sources */,

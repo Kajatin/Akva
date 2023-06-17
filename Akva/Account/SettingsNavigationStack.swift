@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct AccountNavigationStack: View {
+struct SettingsNavigationStack: View {
     var body: some View {
         NavigationStack {
-            Account()
+            SettingsView()
                 .navigationTitle("Account")
         }
     }
 }
 
 #Preview {
-    AccountNavigationStack()
+    SettingsNavigationStack()
 }

@@ -13,16 +13,22 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "Notificati
 
 extension NotificationManager {
     internal func scheduleTimeToDrinkNotification(timeInterval: TimeInterval, dateWhenShows: Date?, onError: @escaping (Error?) -> Void) {
+        if (!notificationEnabled) {
+            logger.warning("Tried to schedule notification but they are disabled")
+            return
+        }
+        
         let content = UNMutableNotificationContent()
-        content.title = "Take a Sip"
+        content.title = "Time to drink"
         //        content.subtitle = "Subtitle"
         if let date = dateWhenShows {
-//            content.body = "You last drank \(Date.now.relativeDateString(to: date))"
-            content.body = "You last drank a while ago"
+            content.body = "You last drank \(Date.now.relativeDateString(to: date))"
         } else {
             content.body = "Remember to stay hydrated"
         }
-        content.sound = UNNotificationSound.default
+        if (soundEnabled) {
+            content.sound = UNNotificationSound.default
+        }
         content.badge = 1
 
         // Fire in 5 seconds

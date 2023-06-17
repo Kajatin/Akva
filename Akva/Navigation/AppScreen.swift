@@ -11,7 +11,7 @@ import DiateryWaterData
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case today
     case history
-    case account
+    case settings
     
     var id: AppScreen { self }
 }
@@ -24,8 +24,8 @@ extension AppScreen {
             Label("Today", systemImage: "house")
         case .history:
             Label("History", systemImage: "calendar")
-        case .account:
-            Label("Account", systemImage: "person.crop.circle")
+        case .settings:
+            Label("Settings", systemImage: "gear")
         }
     }
     
@@ -36,8 +36,8 @@ extension AppScreen {
             TodayNavigationStack()
         case .history:
             HistoryNavigationStack()
-        case .account:
-            AccountNavigationStack()
+        case .settings:
+            SettingsNavigationStack()
         }
     }
     
