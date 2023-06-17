@@ -43,6 +43,7 @@ struct AquaAccessoryRectangular: View {
             .gaugeStyle(.accessoryLinear)
         }
         .privacySensitive()
+        .containerBackground(Color.accentColor, for: .widget)
     }
 }
 
@@ -76,5 +77,5 @@ struct AquaDefault: View {
 
 #Preview {
     AkvaWidgetView(entry: .empty)
-        .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+        .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
 }

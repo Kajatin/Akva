@@ -14,7 +14,11 @@ struct AkvaWidget: Widget {
     private let kind = "Akva Widget"
     
     var families: [WidgetFamily] {
+        #if os(iOS)
         return [.accessoryCircular, .accessoryRectangular, .systemSmall]
+        #elseif os(watchOS)
+        return [.accessoryCircular, .accessoryRectangular]
+        #endif
     }
     
     var body: some WidgetConfiguration {
@@ -32,5 +36,5 @@ struct AkvaWidget: Widget {
 
 #Preview {
     AkvaWidgetView(entry: AkvaWidgetEntry(date: Date()))
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
+        .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
 }
