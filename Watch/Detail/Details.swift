@@ -76,7 +76,7 @@ struct ConsumptionBar: View {
                     RoundedRectangle(cornerRadius: 5)
                         .fill(fill)
                         .frame(width: geometry.size.width * max(ratio, 0.03), height: 25)
-                    if ratio > 0.27 {
+                    if ratio > 0.53 {
                         Text(legend)
                             .font(.headline)
                             .foregroundColor(.white)

@@ -60,7 +60,8 @@ struct History: View {
                 }
             }
         }.onAppear {
-            
+            // TODO: load here and then
+            isLoading = false
         }
     }
 }
