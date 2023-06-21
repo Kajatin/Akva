@@ -10,92 +10,82 @@ import SwiftData
 import DiateryWaterData
 
 struct StatsView: View {
-    @Query private var waterData: [WaterData]
+    var data: WaterData
     
     var body: some View {
-        if let data = waterData.first {
-            VStack(alignment: .leading) {
-                Text("Highlights")
-                    .font(.title2)
-                    .bold()
-                VStack(spacing: 15) {
-                    if (data.progress != 0 || data.progressYesterday != 0) {
-                        StatsViewDaily()
-                    }
-                    if (data.averageThisWeek != 0 || data.averageLastWeek != 0) {
-                        StatsViewWeekly()
-                    }
+        VStack(alignment: .leading) {
+            Text("Highlights")
+                .font(.title2)
+                .bold()
+            VStack(spacing: 15) {
+                if (data.progress != 0 || data.progressYesterday != 0) {
+                    StatsViewDaily(progress: data.progress, progressYesterday: data.progressYesterday)
+                }
+                if (data.averageThisWeek != 0 || data.averageLastWeek != 0) {
+                    StatsViewWeekly(averageThisWeek: data.averageThisWeek, averageLastWeek: data.averageLastWeek)
                 }
             }
-        } else {
-            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
 
 struct StatsViewDaily: View {
-    @Query private var waterData: [WaterData]
+    var progress: Double
+    var progressYesterday: Double
     
     var body: some View {
-        if let data = waterData.first {
-            GroupBox {
-                VStack(alignment: .leading) {
-                    let comparisonText = { () -> String in
-                        if (data.progress > data.progressYesterday) {
-                            return "more water than"
-                        } else if (data.progress == data.progressYesterday) {
-                            return "about the same amount of water as"
-                        } else {
-                            return "less water than"
-                        }
-                    }
-                    
-                    Text("Today you're drinking \(comparisonText()) yesterday")
-                        .font(.headline)
-                        .bold()
-                    Divider()
-                    VStack(alignment: .leading) {
-                        ConsumptionBar(consumption: data.progress, ratio: min(CGFloat(data.progress / data.progressYesterday), 1.0), fill: Color.accentColor, legend: "Today")
-                        ConsumptionBar(consumption: data.progressYesterday, ratio: min(CGFloat(data.progressYesterday / data.progress), 1.0), fill: Color.secondary, legend: "Yesterday")
+        GroupBox {
+            VStack(alignment: .leading) {
+                let comparisonText = { () -> String in
+                    if (progress > progressYesterday) {
+                        return "more water than"
+                    } else if (progress == progressYesterday) {
+                        return "about the same amount of water as"
+                    } else {
+                        return "less water than"
                     }
                 }
+                
+                Text("Today you're drinking \(comparisonText()) yesterday")
+                    .font(.headline)
+                    .bold()
+                Divider()
+                VStack(alignment: .leading) {
+                    ConsumptionBar(consumption: progress, ratio: min(CGFloat(progress / progressYesterday), 1.0), fill: Color.accentColor, legend: "Today")
+                    ConsumptionBar(consumption: progressYesterday, ratio: min(CGFloat(progressYesterday / progress), 1.0), fill: Color.secondary, legend: "Yesterday")
+                }
             }
-        } else {
-            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
 
 struct StatsViewWeekly: View {
-    @Query private var waterData: [WaterData]
+    var averageThisWeek: Double
+    var averageLastWeek: Double
     
     var body: some View {
-        if let data = waterData.first {
-            GroupBox {
-                VStack(alignment: .leading) {
-                    let comparisonText = { () -> String in
-                        if (data.averageThisWeek > data.averageLastWeek) {
-                            return "higher than"
-                        } else if (data.averageThisWeek == data.averageLastWeek) {
-                            return "about the same as"
-                        } else {
-                            return "lower than"
-                        }
-                    }
-                    
-                    Text("This week your daily average water intake is \(comparisonText()) last week")
-                        .font(.headline)
-                        .bold()
-                        .padding(.top, 1)
-                    Divider()
-                    VStack(alignment: .leading) {
-                        ConsumptionBar(consumption: data.averageThisWeek, ratio: min(CGFloat(data.averageThisWeek / data.averageLastWeek), 1.0), fill: Color.accentColor, legend: "This week")
-                        ConsumptionBar(consumption: data.averageLastWeek, ratio: min(CGFloat(data.averageLastWeek / data.averageThisWeek), 1.0), fill: Color.secondary, legend: "Last week")
+        GroupBox {
+            VStack(alignment: .leading) {
+                let comparisonText = { () -> String in
+                    if (averageThisWeek > averageLastWeek) {
+                        return "higher than"
+                    } else if (averageThisWeek == averageLastWeek) {
+                        return "about the same as"
+                    } else {
+                        return "lower than"
                     }
                 }
+                
+                Text("This week your daily average water intake is \(comparisonText()) last week")
+                    .font(.headline)
+                    .bold()
+                    .padding(.top, 1)
+                Divider()
+                VStack(alignment: .leading) {
+                    ConsumptionBar(consumption: averageThisWeek, ratio: min(CGFloat(averageThisWeek / averageLastWeek), 1.0), fill: Color.accentColor, legend: "This week")
+                    ConsumptionBar(consumption: averageLastWeek, ratio: min(CGFloat(averageLastWeek / averageThisWeek), 1.0), fill: Color.secondary, legend: "Last week")
+                }
             }
-        } else {
-            ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
         }
     }
 }
@@ -140,6 +130,7 @@ struct ConsumptionBar: View {
 }
 
 #Preview {
-    StatsView()
-        .waterDataContainer(inMemory: true)
+    ModelPreview { model in
+        StatsView(data: model)
+    }
 }

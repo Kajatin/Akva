@@ -19,8 +19,8 @@ struct Today: View {
                 VStack(spacing: 30) {
                     CircularProgressBar(radius: 125)
                         .padding(.top, 40)
-                    WarningsView()
-                    StatsView()
+                    WarningsView(data: data)
+                    StatsView(data: data)
                 }
                 .padding(.horizontal)
                 .toolbar {
