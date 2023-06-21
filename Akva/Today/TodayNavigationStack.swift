@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import SwiftData
 import DiateryWaterData
 
 struct TodayNavigationStack: View {
+    @Query private var waterData: [WaterData]
+    @State private var waitedToShowIssue = false
+
     var body: some View {
-        NavigationStack {
-            Today()
-                .navigationTitle("Today")
+        if let data = waterData.first {
+            NavigationStack {
+                Today(data: data)
+            }
+            .navigationTitle("Today")
+        } else {
+            ContentUnavailableView {
+                Label {
+                    Text(verbatim: "Failed to load app content")
+                } icon: {
+                    Image(systemName: "xmark")
+                }
+            }
+            .opacity(waitedToShowIssue ? 1 : 0)
+            .task {
+                Task {
+                    try await Task.sleep(for: .seconds(1))
+                    waitedToShowIssue = true
+                }
+            }
         }
     }
 }

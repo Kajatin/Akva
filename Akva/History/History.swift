@@ -15,7 +15,7 @@ struct History: View {
     // TODO: handle loading properly here
     @State private var isLoading = false
     
-    @Query private var waterData: [WaterData]
+    var normalizedProgress: (Date) -> CGFloat
     
     private var year: DateInterval {
         calendar.dateInterval(of: .year, for: Date())!
@@ -28,36 +28,32 @@ struct History: View {
                     ProgressView() // Or your custom skeleton view
                 }
             } else {
-                if let data = waterData.first {
-                    CalendarProgressView(interval: year) { date in
-                        let normProgress = data.normalizedProgress(for: date)
-                        let opacity = date > Date() ? 0.65 : 1
-                        let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
-                        ZStack {
-                            if normProgress >= 1 {
-                                Circle()
-                                    .foregroundColor(.accentColor)
-                            } else {
-                                Circle()
-                                    .stroke(Color.secondary, lineWidth: 6)
-                                    .opacity(colorScheme == .light ? 0.2 : 0.25)
-                                
-                                Circle()
-                                    .trim(from: 0, to: data.normalizedProgress(for: date))
-                                    .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                                    .rotationEffect(.degrees(-90))
-                            }
-                            Text(String(self.calendar.component(.day, from: date)))
-                                .foregroundColor(dateNumberColor)
-                                .bold()
+                CalendarProgressView(interval: year) { date in
+                    let normProgress = normalizedProgress(date)
+                    let opacity = date > Date() ? 0.65 : 1
+                    let dateNumberColor = Calendar.autoupdatingCurrent.isDateInToday(date) && normProgress < 1 ? Color.accentColor : .primary
+                    ZStack {
+                        if normProgress >= 1 {
+                            Circle()
+                                .foregroundColor(.accentColor)
+                        } else {
+                            Circle()
+                                .stroke(Color.secondary, lineWidth: 6)
+                                .opacity(colorScheme == .light ? 0.2 : 0.25)
+                            
+                            Circle()
+                                .trim(from: 0, to: normalizedProgress(date))
+                                .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 6, lineCap: .round))
+                                .rotationEffect(.degrees(-90))
                         }
-                        .padding(6)
-                        .opacity(opacity)
+                        Text(String(self.calendar.component(.day, from: date)))
+                            .foregroundColor(dateNumberColor)
+                            .bold()
                     }
-                    .padding(.horizontal)
-                } else {
-                    ContentUnavailableView("Content unavailable", systemImage: "xmark.circle")
+                    .padding(6)
+                    .opacity(opacity)
                 }
+                .padding(.horizontal)
             }
         }.onAppear {
             // TODO: load here and then
@@ -267,6 +263,7 @@ struct CalendarProgressView<DateView>: View where DateView: View {
 }
 
 #Preview {
-    History()
-        .waterDataContainer(inMemory: true)
+    ModelPreview { (model: WaterData) in
+        History(normalizedProgress: model.normalizedProgress)
+    }
 }

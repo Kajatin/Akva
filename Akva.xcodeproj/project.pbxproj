@@ -210,7 +210,7 @@
 				4C2854A42A35036600971889 /* Navigation */,
 				4C2854AA2A35068600971889 /* Today */,
 				4C2854AF2A350A3500971889 /* History */,
-				4C2854B22A350B2700971889 /* Account */,
+				4C2854B22A350B2700971889 /* Settings */,
 				4C2854992A34740B00971889 /* Storage */,
 				4C2854B52A350BBC00971889 /* General */,
 				4C1564C828CD27240017C1AE /* Preview Content */,
@@ -288,7 +288,7 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		4C2854B22A350B2700971889 /* Account */ = {
+		4C2854B22A350B2700971889 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				4C2854B32A350B3600971889 /* SettingsNavigationStack.swift */,
@@ -298,7 +298,7 @@
 				4CCD45B128E8865300D7B767 /* AllDrinkData.swift */,
 				4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */,
 			);
-			path = Account;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		4C2854B52A350BBC00971889 /* General */ = {

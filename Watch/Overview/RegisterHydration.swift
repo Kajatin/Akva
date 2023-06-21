@@ -10,8 +10,8 @@ import SwiftData
 import DiateryWaterData
 
 struct RegisterHydration: View {
+    var addConsumption: (Double, Date) -> Void
     @State private var volume: Double = 250
-    @Bindable var data: WaterData
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -43,7 +43,7 @@ struct RegisterHydration: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button {
-                    data.addConsumption(quantity: volume, date: .now)
+                    addConsumption(volume, .now)
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Label("Save", systemImage: "checkmark")
@@ -54,6 +54,8 @@ struct RegisterHydration: View {
     }
 }
 
-//#Preview {
-//    RegisterHydration()
-//}
+#Preview {
+    ModelPreview { (model: WaterData) in
+        RegisterHydration(addConsumption: model.addConsumption)
+    }
+}

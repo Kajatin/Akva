@@ -1,29 +1,24 @@
 //
-//  ContentView.swift
-//  Akva Watch App
+//  AccountNavigationStack.swift
+//  Akva
 //
-//  Created by Roland Kajatin on 10/01/2023.
+//  Created by Roland Kajatin on 10/06/2023.
 //
 
-import Charts
 import SwiftUI
 import SwiftData
-import HealthKit
 import DiateryWaterData
 
-// TODO: Logo which is just a drop of water
-
-struct ContentView: View {
+struct SettingsNavigationStack: View {
     @Query private var waterData: [WaterData]
     @State private var waitedToShowIssue = false
     
     var body: some View {
         if let data = waterData.first {
-            TabView {
-                Overview(data: data)
-                Details(data: data)
+            NavigationStack {
+                SettingsView(data: data)
             }
-            .tabViewStyle(.verticalPage)
+            .navigationTitle("Settings")
         } else {
             ContentUnavailableView {
                 Label {
@@ -44,6 +39,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SettingsNavigationStack()
         .waterDataContainer(inMemory: true)
 }
+

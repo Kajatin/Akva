@@ -10,7 +10,7 @@ import SwiftData
 import DiateryWaterData
 
 struct Overview: View {
-    @Bindable var data: WaterData
+    var data: WaterData
     @State private var showRegisterSheet = false
     
     var body: some View {
@@ -31,7 +31,7 @@ struct Overview: View {
                 }
             }
             .sheet(isPresented: $showRegisterSheet) {
-                RegisterHydration(data: data)
+                RegisterHydration(addConsumption: data.addConsumption)
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
@@ -39,6 +39,8 @@ struct Overview: View {
     }
 }
 
-//#Preview {
-//    Overview()
-//}
+#Preview {
+    ModelPreview { model in
+        Overview(data: model)
+    }
+}
