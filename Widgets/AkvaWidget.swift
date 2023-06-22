@@ -17,7 +17,7 @@ struct AkvaWidget: Widget {
         #if os(iOS)
         return [.accessoryCircular, .accessoryRectangular, .systemSmall]
         #elseif os(watchOS)
-        return [.accessoryCircular, .accessoryRectangular]
+        return [.accessoryCircular, .accessoryRectangular, .accessoryInline, .accessoryCorner]
         #endif
     }
     
@@ -34,7 +34,8 @@ struct AkvaWidget: Widget {
     }
 }
 
-#Preview {
-    AkvaWidgetView(entry: AkvaWidgetEntry(date: Date()))
-        .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+#Preview(as: .accessoryCircular) {
+    AkvaWidget()
+} timeline: {
+    AkvaWidgetEntry(date: .now)
 }

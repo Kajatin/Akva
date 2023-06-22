@@ -17,16 +17,20 @@ struct AkvaWidgetView : View {
     var body: some View {
         switch family {
         case .accessoryRectangular:
-            AquaAccessoryRectangular(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
+            AkvaAccessoryRectangular(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
         case .accessoryCircular:
-            AquaAccessoryCircular(progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
+            AkvaAccessoryCircular(progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
+        case .accessoryInline:
+            AkvaAccessoryInline(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0)
+        case .accessoryCorner:
+            AkvaAccessoryCorner(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0)
         default:
-            AquaDefault(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
+            AkvaDefault(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
         }
     }
 }
 
-struct AquaAccessoryRectangular: View {
+struct AkvaAccessoryRectangular: View {
     var target: Double
     var progress: Double
     var progressNormalized: Double
@@ -47,7 +51,7 @@ struct AquaAccessoryRectangular: View {
     }
 }
 
-struct AquaAccessoryCircular: View {
+struct AkvaAccessoryCircular: View {
     var progress: Double
     var progressNormalized: Double
 
@@ -61,10 +65,44 @@ struct AquaAccessoryCircular: View {
             Text("\(progress.formatted())")
         }
         .privacySensitive()
+        .containerBackground(Color.accentColor, for: .widget)
     }
 }
 
-struct AquaDefault: View {
+struct AkvaAccessoryInline: View {
+    var target: Double
+    var progress: Double
+    
+    var body: some View {
+        ViewThatFits{
+            Text("\(progress.formatted())/\(target.formatted()) mL consumed")
+            Text("\(progress.formatted()) mL consumed")
+            Text("\((100 * progress / target).rounded(.towardZero).formatted())% consumed")
+            Text("\(progress.formatted()) mL")
+            Text("\((100 * progress / target).rounded(.towardZero).formatted())%")
+        }
+        .containerBackground(Color.accentColor, for: .widget)
+    }
+}
+
+struct AkvaAccessoryCorner: View {
+    var target: Double
+    var progress: Double
+    
+    var body: some View {
+        Text("\((100 * progress / target).rounded(.towardZero).formatted())%")
+            .font(.title)
+            .widgetLabel {
+                ProgressView(value: progress, total: target)
+//                    .tint(entry.color)
+                    .tint(.blue)
+                    .widgetAccentable()
+            }
+            .containerBackground(Color.accentColor, for: .widget)
+    }
+}
+
+struct AkvaDefault: View {
     var target: Double
     var progress: Double
     var progressNormalized: Double
@@ -72,10 +110,12 @@ struct AquaDefault: View {
     var body: some View {
         CircularProgressBar(radius: 130, target: 3000, progress: 1850, progressNormalized: 0.7)
             .padding(.all, 5)
+            .containerBackground(.background, for: .widget)
     }
 }
 
-#Preview {
-    AkvaWidgetView(entry: .empty)
-        .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+#Preview(as: .accessoryCircular) {
+    AkvaWidget()
+} timeline: {
+    AkvaWidgetEntry(date: .now)
 }
