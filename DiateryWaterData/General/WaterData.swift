@@ -23,7 +23,7 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
     private let syncIntervalMinutes: Int = 30
 
     /// Determines whether data should be synced from Apple Health.
-    @Transient public var requiresSyncing: Bool {
+    @Transient public var requiresSyncing: Bool? {
         guard let lastSyncDate = lastSyncDate else {
             return true
         }
@@ -36,7 +36,7 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
     }
 
     private func syncDataFromHealth(modelContext: ModelContext) {
-        if (!requiresSyncing) {
+        if (!(requiresSyncing ?? true)) {
             logger.info("Water data is already up-to-date")
             return
         }

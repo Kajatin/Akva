@@ -43,7 +43,7 @@ struct TimeToDrink: View {
     var body: some View {
         GroupBox(label: Label("Important", systemImage: "exclamationmark.triangle")) {
             VStack(alignment: .leading) {
-                Text("You have not drunk in a long time")
+                Text("You haven't had a drink in a long time")
                     .font(.headline)
                     .bold()
                     .padding(.top, 1)
