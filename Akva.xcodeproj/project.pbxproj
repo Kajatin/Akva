@@ -50,6 +50,16 @@
 		4C768E982A3D1E5B000D21CC /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */; };
 		4C8351252A3B8E3000F6ED57 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351242A3B8E3000F6ED57 /* CircularProgressBar.swift */; };
 		4C8351272A3B93D000F6ED57 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351262A3B93D000F6ED57 /* Details.swift */; };
+		4C9878C52A478B4100B25DC2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB228EC081400AE37D0 /* WidgetKit.framework */; };
+		4C9878C62A478B4100B25DC2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB428EC081400AE37D0 /* SwiftUI.framework */; };
+		4C9878C92A478B4100B25DC2 /* WatchWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9878C82A478B4100B25DC2 /* WatchWidgets.swift */; };
+		4C9878CB2A478B4300B25DC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9878CA2A478B4300B25DC2 /* Assets.xcassets */; };
+		4C9878CF2A478B4300B25DC2 /* WatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C9878C42A478B4100B25DC2 /* WatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C9878D42A478BC100B25DC2 /* DiateryWaterData in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9878D32A478BC100B25DC2 /* DiateryWaterData */; };
+		4C9878D52A478C0400B25DC2 /* AkvaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C354BCE28ECC26700AE37D0 /* AkvaWidget.swift */; };
+		4C9878D62A478C0800B25DC2 /* AkvaWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E952A3D01FC000D21CC /* AkvaWidgetView.swift */; };
+		4C9878D72A478C0A00B25DC2 /* AkvaSnapshotTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E932A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift */; };
+		4C9878D82A478C0D00B25DC2 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */; };
 		4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE327D0296E08510021B336 /* ContentView.swift */; };
 		4CBBEAB72A44DA1D000CE1A9 /* AkvaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CCD45AE28E87BC300D7B767 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */; };
@@ -59,6 +69,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C9878CD2A478B4300B25DC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C1564B728CD27230017C1AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C9878C32A478B4100B25DC2;
+			remoteInfo = WatchWidgetsExtension;
+		};
 		4CBBEAB82A44DA1E000CE1A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C1564B728CD27230017C1AE /* Project object */;
@@ -69,6 +86,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4C9878B92A4785AD00B25DC2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4C9878CF2A478B4300B25DC2 /* WatchWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CBBEABA2A44DA1E000CE1A9 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,16 +104,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				4CBBEAB72A44DA1D000CE1A9 /* AkvaWidgetExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CBBEAD62A44E0DC000CE1A9 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +158,10 @@
 		4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4C8351242A3B8E3000F6ED57 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4C8351262A3B93D000F6ED57 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		4C9878C42A478B4100B25DC2 /* WatchWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WatchWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9878C82A478B4100B25DC2 /* WatchWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgets.swift; sourceTree = "<group>"; };
+		4C9878CA2A478B4300B25DC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C9878CC2A478B4300B25DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4CCD45B128E8865300D7B767 /* AllDrinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDrinkData.swift; sourceTree = "<group>"; };
 		4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingView.swift; sourceTree = "<group>"; };
@@ -169,6 +191,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C9878C12A478B4100B25DC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9878C62A478B4100B25DC2 /* SwiftUI.framework in Frameworks */,
+				4C9878C52A478B4100B25DC2 /* WidgetKit.framework in Frameworks */,
+				4C9878D42A478BC100B25DC2 /* DiateryWaterData in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CE327AA296DFFDE0021B336 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +219,7 @@
 				4C1564C128CD27230017C1AE /* Akva */,
 				4CE327AE296DFFDE0021B336 /* Watch */,
 				4C354BCD28ECC26700AE37D0 /* Widgets */,
+				4C9878C72A478B4100B25DC2 /* WatchWidgets */,
 				4C2854942A3274DC00971889 /* DiateryWaterData */,
 				4C354BB128EC081400AE37D0 /* Frameworks */,
 				4C1564C028CD27230017C1AE /* Products */,
@@ -199,6 +232,7 @@
 				4C1564BF28CD27230017C1AE /* Akva.app */,
 				4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */,
 				4CE327AD296DFFDE0021B336 /* Akva Watch App.app */,
+				4C9878C42A478B4100B25DC2 /* WatchWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +381,16 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
+		4C9878C72A478B4100B25DC2 /* WatchWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				4C9878C82A478B4100B25DC2 /* WatchWidgets.swift */,
+				4C9878CA2A478B4300B25DC2 /* Assets.xcassets */,
+				4C9878CC2A478B4300B25DC2 /* Info.plist */,
+			);
+			path = WatchWidgets;
+			sourceTree = "<group>";
+		};
 		4CE327AE296DFFDE0021B336 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +450,26 @@
 			productReference = 4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4C9878C32A478B4100B25DC2 /* WatchWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9878D02A478B4300B25DC2 /* Build configuration list for PBXNativeTarget "WatchWidgetsExtension" */;
+			buildPhases = (
+				4C9878C02A478B4100B25DC2 /* Sources */,
+				4C9878C12A478B4100B25DC2 /* Frameworks */,
+				4C9878C22A478B4100B25DC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchWidgetsExtension;
+			packageProductDependencies = (
+				4C9878D32A478BC100B25DC2 /* DiateryWaterData */,
+			);
+			productName = WatchWidgetsExtension;
+			productReference = 4C9878C42A478B4100B25DC2 /* WatchWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4CE327AC296DFFDE0021B336 /* Akva Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CE327B8296DFFDF0021B336 /* Build configuration list for PBXNativeTarget "Akva Watch App" */;
@@ -413,11 +477,12 @@
 				4CE327A9296DFFDE0021B336 /* Sources */,
 				4CE327AA296DFFDE0021B336 /* Frameworks */,
 				4CE327AB296DFFDE0021B336 /* Resources */,
-				4CBBEAD62A44E0DC000CE1A9 /* Embed Foundation Extensions */,
+				4C9878B92A4785AD00B25DC2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4C9878CE2A478B4300B25DC2 /* PBXTargetDependency */,
 			);
 			name = "Akva Watch App";
 			packageProductDependencies = (
@@ -443,6 +508,9 @@
 					4C354BC928ECC26700AE37D0 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					4C9878C32A478B4100B25DC2 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					4CE327AC296DFFDE0021B336 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -464,6 +532,7 @@
 				4C1564BE28CD27230017C1AE /* Akva */,
 				4CE327AC296DFFDE0021B336 /* Akva Watch App */,
 				4C354BC928ECC26700AE37D0 /* AkvaWidgetExtension */,
+				4C9878C32A478B4100B25DC2 /* WatchWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -482,6 +551,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C354BD128ECC26800AE37D0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9878C22A478B4100B25DC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9878CB2A478B4300B25DC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +621,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C9878C02A478B4100B25DC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9878D52A478C0400B25DC2 /* AkvaWidget.swift in Sources */,
+				4C9878C92A478B4100B25DC2 /* WatchWidgets.swift in Sources */,
+				4C9878D72A478C0A00B25DC2 /* AkvaSnapshotTimelineProvider.swift in Sources */,
+				4C9878D62A478C0800B25DC2 /* AkvaWidgetView.swift in Sources */,
+				4C9878D82A478C0D00B25DC2 /* CircularProgressBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CE327A9296DFFDE0021B336 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -560,6 +649,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C9878CE2A478B4300B25DC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C9878C32A478B4100B25DC2 /* WatchWidgetsExtension */;
+			targetProxy = 4C9878CD2A478B4300B25DC2 /* PBXContainerItemProxy */;
+		};
 		4CBBEAB92A44DA1E000CE1A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C354BC928ECC26700AE37D0 /* AkvaWidgetExtension */;
@@ -795,13 +889,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.roland.kajatin.Akva.AkvaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -828,13 +922,78 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.roland.kajatin.Akva.AkvaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C9878D12A478B4300B25DC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2HL3ZXJQU;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.roland.kajatin.Akva.watchkitapp.WatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		4C9878D22A478B4300B25DC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2HL3ZXJQU;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.roland.kajatin.Akva.watchkitapp.WatchWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Release;
 		};
@@ -942,6 +1101,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4C9878D02A478B4300B25DC2 /* Build configuration list for PBXNativeTarget "WatchWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9878D12A478B4300B25DC2 /* Debug */,
+				4C9878D22A478B4300B25DC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4CE327B8296DFFDF0021B336 /* Build configuration list for PBXNativeTarget "Akva Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -963,6 +1131,10 @@
 			productName = DiateryWaterData;
 		};
 		4C768E8D2A3CF9D7000D21CC /* DiateryWaterData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DiateryWaterData;
+		};
+		4C9878D32A478BC100B25DC2 /* DiateryWaterData */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DiateryWaterData;
 		};
