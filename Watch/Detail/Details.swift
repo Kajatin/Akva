@@ -12,7 +12,7 @@ import DiateryWaterData
 
 struct Details: View {
     var data: WaterData
-    var color = Color.green
+    var color = Color("AccentColorOther")
 
     var body: some View {
         NavigationStack {

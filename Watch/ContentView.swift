@@ -11,8 +11,6 @@ import SwiftData
 import HealthKit
 import DiateryWaterData
 
-// TODO: Logo which is just a drop of water
-
 struct ContentView: View {
     @Query private var waterData: [WaterData]
     @State private var waitedToShowIssue = false
