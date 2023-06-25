@@ -34,7 +34,7 @@ struct AkvaWidget: Widget {
     }
 }
 
-#Preview(as: .accessoryCircular) {
+#Preview(as: .accessoryRectangular) {
     AkvaWidget()
 } timeline: {
     AkvaWidgetEntry(date: .now)

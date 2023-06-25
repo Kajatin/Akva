@@ -17,7 +17,7 @@ struct AkvaWidgetView : View {
     var body: some View {
         switch family {
         case .accessoryRectangular:
-            AkvaAccessoryRectangular(target: entry.data?.target ?? 0, progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
+            AkvaAccessoryRectangular(progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0, lastIntakeTime: entry.data?.mostRecentRecord.endDate ?? .now)
         case .accessoryCircular:
             AkvaAccessoryCircular(progress: entry.data?.progress ?? 0, progressNormalized: entry.data?.progressNormalized ?? 0)
         case .accessoryInline:
@@ -31,23 +31,33 @@ struct AkvaWidgetView : View {
 }
 
 struct AkvaAccessoryRectangular: View {
-    var target: Double
     var progress: Double
     var progressNormalized: Double
+    var lastIntakeTime: Date
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(target.formatted()) mL")
-            Text("\(progress.formatted()) mL")
-                .font(.system(size: 18))
-                .fontWeight(.bold)
+        HStack(spacing: 10) {
             Gauge(value: progressNormalized) {
-                Image(systemName: "drop.fill")
+                Text("\(progressNormalized.formatted())%")
             }
-            .gaugeStyle(.accessoryLinear)
+                .gaugeStyle(.accessoryCircularCapacity)
+                .widgetAccentable()
+                .frame(width: 50, height: 50)
+            VStack(alignment: .leading) {
+                Text("Akva")
+                    .font(.headline)
+                    .foregroundStyle(.blue)
+                    .widgetAccentable()
+                Text("\(progress.formatted()) mL")
+                HStack {
+                    Image(systemName: "clock.arrow.circlepath")
+                    Text("\(lastIntakeTime.formatted(date: .omitted, time: .shortened))")
+                }
+                .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .privacySensitive()
-        .containerBackground(Color.accentColor, for: .widget)
+        .containerBackground(.blue.gradient, for: .widget)
     }
 }
 
@@ -114,7 +124,7 @@ struct AkvaDefault: View {
     }
 }
 
-#Preview(as: .accessoryCircular) {
+#Preview(as: .accessoryRectangular) {
     AkvaWidget()
 } timeline: {
     AkvaWidgetEntry(date: .now)
