@@ -38,7 +38,7 @@ struct AkvaAccessoryRectangular: View {
     var body: some View {
         HStack(spacing: 10) {
             Gauge(value: progressNormalized) {
-                Text("\(progressNormalized.formatted())%")
+                Text("\((progressNormalized * 100).formatted())%")
             }
                 .gaugeStyle(.accessoryCircularCapacity)
                 .widgetAccentable()
@@ -64,18 +64,15 @@ struct AkvaAccessoryRectangular: View {
 struct AkvaAccessoryCircular: View {
     var progress: Double
     var progressNormalized: Double
-
+    
     var body: some View {
-        ZStack {
-            Gauge(value: progressNormalized) {
-                Image(systemName: "drop.fill")
-            }
-            .gaugeStyle(.accessoryCircular)
-
-            Text("\(progress.formatted())")
+        Gauge(value: progressNormalized) {
+            Text("\((progressNormalized * 100).formatted())%")
         }
-        .privacySensitive()
-        .containerBackground(Color.accentColor, for: .widget)
+        .gaugeStyle(.accessoryCircularCapacity)
+        .tint(.blue)
+        .widgetAccentable()
+        .containerBackground(.black, for: .widget)
     }
 }
 
@@ -85,13 +82,20 @@ struct AkvaAccessoryInline: View {
     
     var body: some View {
         ViewThatFits{
-            Text("\(progress.formatted())/\(target.formatted()) mL consumed")
-            Text("\(progress.formatted()) mL consumed")
-            Text("\((100 * progress / target).rounded(.towardZero).formatted())% consumed")
-            Text("\(progress.formatted()) mL")
-            Text("\((100 * progress / target).rounded(.towardZero).formatted())%")
+            HStack {
+                Image(systemName: "drop.fill")
+                Text("\(progress.formatted())/\(target.formatted()) mL")
+            }
+            HStack {
+                Image(systemName: "drop.fill")
+                Text("\(progress.formatted()) mL")
+            }
+            HStack {
+                Image(systemName: "drop.fill")
+                Text("\((100 * progress / target).rounded(.towardZero).formatted())%")
+            }
         }
-        .containerBackground(Color.accentColor, for: .widget)
+        .containerBackground(.black, for: .widget)
     }
 }
 
@@ -100,15 +104,14 @@ struct AkvaAccessoryCorner: View {
     var progress: Double
     
     var body: some View {
-        Text("\((100 * progress / target).rounded(.towardZero).formatted())%")
-            .font(.title)
+        Text("\((100 * progress / max(target, 0.00001)).rounded(.towardZero).formatted())%")
+            .widgetCurvesContent()
             .widgetLabel {
                 ProgressView(value: progress, total: target)
-//                    .tint(entry.color)
-                    .tint(.blue)
-                    .widgetAccentable()
             }
-            .containerBackground(Color.accentColor, for: .widget)
+            .tint(.blue)
+            .widgetAccentable()
+            .containerBackground(.blue.gradient, for: .widget)
     }
 }
 
@@ -118,13 +121,13 @@ struct AkvaDefault: View {
     var progressNormalized: Double
     
     var body: some View {
-        CircularProgressBar(radius: 130, target: 3000, progress: 1850, progressNormalized: 0.7)
+        CircularProgressBar(radius: 130, target: target, progress: progress, progressNormalized: progressNormalized)
             .padding(.all, 5)
             .containerBackground(.background, for: .widget)
     }
 }
 
-#Preview(as: .accessoryRectangular) {
+#Preview(as: .accessoryCircular) {
     AkvaWidget()
 } timeline: {
     AkvaWidgetEntry(date: .now)
