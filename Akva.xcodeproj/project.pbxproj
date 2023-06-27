@@ -50,6 +50,7 @@
 		4C768E982A3D1E5B000D21CC /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */; };
 		4C8351252A3B8E3000F6ED57 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351242A3B8E3000F6ED57 /* CircularProgressBar.swift */; };
 		4C8351272A3B93D000F6ED57 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8351262A3B93D000F6ED57 /* Details.swift */; };
+		4C8D91E62A4B60540032E2B2 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28549A2A3474AF00971889 /* Keys.swift */; };
 		4C9878C52A478B4100B25DC2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB228EC081400AE37D0 /* WidgetKit.framework */; };
 		4C9878C62A478B4100B25DC2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C354BB428EC081400AE37D0 /* SwiftUI.framework */; };
 		4C9878C92A478B4100B25DC2 /* WatchWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9878C82A478B4100B25DC2 /* WatchWidgets.swift */; };
@@ -61,6 +62,12 @@
 		4C9878D72A478C0A00B25DC2 /* AkvaSnapshotTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E932A3D00EB000D21CC /* AkvaSnapshotTimelineProvider.swift */; };
 		4C9878D82A478C0D00B25DC2 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C768E972A3D1E5B000D21CC /* CircularProgressBar.swift */; };
 		4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE327D0296E08510021B336 /* ContentView.swift */; };
+		4CA731EA2A4B6B9E00AD2694 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731E92A4B6B9E00AD2694 /* Onboarding.swift */; };
+		4CA731EC2A4B6C3400AD2694 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731EB2A4B6C3400AD2694 /* Settings.swift */; };
+		4CA731EE2A4B6C4B00AD2694 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731ED2A4B6C4B00AD2694 /* Welcome.swift */; };
+		4CA731F02A4B6C6900AD2694 /* HealthPermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731EF2A4B6C6900AD2694 /* HealthPermissionRequest.swift */; };
+		4CA731F22A4B6C7E00AD2694 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731F12A4B6C7E00AD2694 /* OnboardingFlow.swift */; };
+		4CA731F42A4B6C9B00AD2694 /* NotificationPermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA731F32A4B6C9B00AD2694 /* NotificationPermissionRequest.swift */; };
 		4CBBEAB72A44DA1D000CE1A9 /* AkvaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C354BCA28ECC26700AE37D0 /* AkvaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CCD45AE28E87BC300D7B767 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */; };
 		4CCD45B228E8865300D7B767 /* AllDrinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCD45B128E8865300D7B767 /* AllDrinkData.swift */; };
@@ -162,6 +169,12 @@
 		4C9878C82A478B4100B25DC2 /* WatchWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWidgets.swift; sourceTree = "<group>"; };
 		4C9878CA2A478B4300B25DC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C9878CC2A478B4300B25DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CA731E92A4B6B9E00AD2694 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		4CA731EB2A4B6C3400AD2694 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4CA731ED2A4B6C4B00AD2694 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		4CA731EF2A4B6C6900AD2694 /* HealthPermissionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPermissionRequest.swift; sourceTree = "<group>"; };
+		4CA731F12A4B6C7E00AD2694 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		4CA731F32A4B6C9B00AD2694 /* NotificationPermissionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionRequest.swift; sourceTree = "<group>"; };
 		4CCD45AD28E87BC300D7B767 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		4CCD45B128E8865300D7B767 /* AllDrinkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDrinkData.swift; sourceTree = "<group>"; };
 		4CCD45B528E8ED4100D7B767 /* TargetSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettingView.swift; sourceTree = "<group>"; };
@@ -391,6 +404,19 @@
 			path = WatchWidgets;
 			sourceTree = "<group>";
 		};
+		4CA731E82A4B6B8100AD2694 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4CA731E92A4B6B9E00AD2694 /* Onboarding.swift */,
+				4CA731F12A4B6C7E00AD2694 /* OnboardingFlow.swift */,
+				4CA731ED2A4B6C4B00AD2694 /* Welcome.swift */,
+				4CA731EF2A4B6C6900AD2694 /* HealthPermissionRequest.swift */,
+				4CA731F32A4B6C9B00AD2694 /* NotificationPermissionRequest.swift */,
+				4CA731EB2A4B6C3400AD2694 /* Settings.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		4CE327AE296DFFDE0021B336 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +425,7 @@
 				4CE327B3296DFFDF0021B336 /* Assets.xcassets */,
 				4C4819AB2A3A5AC700DA0E5D /* AkvaWatchApp.swift */,
 				4CE327D0296E08510021B336 /* ContentView.swift */,
+				4CA731E82A4B6B8100AD2694 /* Onboarding */,
 				4C8351232A3B885B00F6ED57 /* Overview */,
 				4C768E8C2A3C2EC9000D21CC /* Detail */,
 			);
@@ -638,10 +665,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4819AE2A3A672A00DA0E5D /* Overview.swift in Sources */,
+				4CA731F02A4B6C6900AD2694 /* HealthPermissionRequest.swift in Sources */,
 				4C4819B02A3ADAC500DA0E5D /* RegisterHydration.swift in Sources */,
 				4C8351272A3B93D000F6ED57 /* Details.swift in Sources */,
 				4C4819AC2A3A5AC700DA0E5D /* AkvaWatchApp.swift in Sources */,
+				4C8D91E62A4B60540032E2B2 /* Keys.swift in Sources */,
+				4CA731F22A4B6C7E00AD2694 /* OnboardingFlow.swift in Sources */,
 				4CA32B5E2A30FF5600471C09 /* ContentView.swift in Sources */,
+				4CA731EE2A4B6C4B00AD2694 /* Welcome.swift in Sources */,
+				4CA731EC2A4B6C3400AD2694 /* Settings.swift in Sources */,
+				4CA731F42A4B6C9B00AD2694 /* NotificationPermissionRequest.swift in Sources */,
+				4CA731EA2A4B6B9E00AD2694 /* Onboarding.swift in Sources */,
 				4C8351252A3B8E3000F6ED57 /* CircularProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

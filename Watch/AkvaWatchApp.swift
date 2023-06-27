@@ -15,6 +15,7 @@ struct BackyardBirdsWatchApp: App {
         WindowGroup {
             ContentView()
                 .waterDataContainer()
+                .onboarding()
         }
     }
 }

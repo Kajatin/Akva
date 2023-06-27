@@ -87,7 +87,7 @@ struct Welcome: View {
         }
         .padding(.all)
         .background(colorScheme == .dark ? .clear : .gray.opacity(0.15))
-        .navigationTitle("Welcome")
+        .navigationTitle("Hi")
     }
 }
 
