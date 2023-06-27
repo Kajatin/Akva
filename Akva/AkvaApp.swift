@@ -11,9 +11,6 @@ import DiateryWaterData
 
 @main
 struct AkvaApp: App {
-//    @UIApplicationDelegateAdaptor()
-    @AppStorage(StorageKeys.onboardingNeeded) var onboardingNeeded = true
-
     var body: some Scene {
         WindowGroup {
             ContentView()

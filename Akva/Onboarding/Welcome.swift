@@ -17,7 +17,7 @@ struct Welcome: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 30) {
-            Text("Welcome 👋")
+            Text("Hi 👋")
                 .font(.title)
                 .bold()
                 .padding(.top, 25)
