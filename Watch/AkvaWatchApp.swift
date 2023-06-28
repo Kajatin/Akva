@@ -14,8 +14,8 @@ struct BackyardBirdsWatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .waterDataContainer()
                 .onboarding()
+                .waterDataContainer()
         }
     }
 }

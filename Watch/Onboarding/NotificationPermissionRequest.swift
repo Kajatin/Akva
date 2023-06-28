@@ -75,6 +75,8 @@ struct NotificationPermissionRequest: View {
                 Text("Skip")
             }
         }
+        .padding(.horizontal)
+        .containerBackground(.white.gradient, for: .navigation)
         .navigationTitle("Notifications")
         .navigationBarBackButtonHidden(notificationsProcessing)
         .alert("Akva will not be able to remind you without notifications", isPresented: $showSkipAlert) {

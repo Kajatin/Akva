@@ -35,6 +35,8 @@ struct Welcome: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        .padding(.horizontal)
+        .containerBackground(.blue.gradient, for: .navigation)
         .navigationTitle("Hi")
     }
 }

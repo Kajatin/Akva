@@ -65,6 +65,8 @@ struct HealthPermissionRequest: View {
             }
             .buttonStyle(.borderedProminent)
         }
+        .padding(.horizontal)
+        .containerBackground(.white.gradient, for: .navigation)
         .navigationTitle("Apple Health")
         .navigationBarBackButtonHidden(healthKitProcessing)
         .alert("Akva will not function properly without Apple Health. You may grant access later in Settings.", isPresented: $showDeniedAlert) {

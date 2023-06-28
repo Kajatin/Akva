@@ -14,7 +14,6 @@ struct OnboardingFlow: View {
         case settings
     }
     
-//        @SceneStorage(StorageKeys.onboardingFlowStep) private var onboardingSteps: [Step] = []
     @State private var onboardingSteps: [Step] = []
     @AppStorage(StorageKeys.onboardingNeeded) var onboardingNeeded = true
     

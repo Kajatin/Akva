@@ -14,8 +14,8 @@ struct AkvaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .waterDataContainer()
                 .onboarding()
+                .waterDataContainer()
         }
     }
 }
