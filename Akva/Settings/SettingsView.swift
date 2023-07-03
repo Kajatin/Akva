@@ -30,11 +30,11 @@ struct SettingsView: View {
             }
             
             Section(header: Text("Notification preferences")) {
-                Toggle(isOn: $notificationManager.notificationEnabled) {
-                    Text("Enable Notifications")
-                }
                 Toggle(isOn: $notificationManager.soundEnabled) {
                     Text("Enable Sound")
+                }
+                Toggle(isOn: $notificationManager.notificationEnabled) {
+                    Text("Enable Notifications")
                 }
             }
             

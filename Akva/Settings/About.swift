@@ -38,6 +38,10 @@ struct About: View {
                         .foregroundColor(.secondary)
                 }
             }
+            
+            Section(header: Text("Source Code")) {
+                Link("GitHub", destination: URL(string: "https://github.com/Kajatin/Akva")!)
+            }
         }
         .navigationTitle("About")
     }

@@ -18,7 +18,6 @@ struct TodayNavigationStack: View {
             NavigationStack {
                 Today(data: data)
             }
-            .navigationTitle("Today")
         } else {
             ContentUnavailableView {
                 Label {

@@ -44,6 +44,7 @@ struct Today: View {
         .sheet(isPresented: $showAddDrinkSheet) {
             RegisterWaterIntake(addConsumption: data.addConsumption)
         }
+        .navigationTitle("Today")
     }
 }
     

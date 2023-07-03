@@ -18,7 +18,6 @@ struct SettingsNavigationStack: View {
             NavigationStack {
                 SettingsView(data: data)
             }
-            .navigationTitle("Settings")
         } else {
             ContentUnavailableView {
                 Label {
