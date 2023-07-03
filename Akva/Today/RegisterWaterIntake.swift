@@ -12,11 +12,12 @@ import DiateryWaterData
 struct RegisterWaterIntake: View {
     var addConsumption: (Double, Date) -> Void
     @Environment(\.presentationMode) var presentationMode
-    
-    private let volumeAmounts: [Double] = [100, 150, 200, 250, 300, 350]
-    @State private var selectedVolume: Double = 200
+
     @State private var date = Date()
-    
+    @State private var showCustomIntake = false
+    @State private var selectedVolume: Double = 200
+    @State private var volumeAmounts: [Double] = [100, 150, 200, 250, 300, 350]
+
     var body: some View {
         NavigationView {
             Form {
@@ -24,9 +25,18 @@ struct RegisterWaterIntake: View {
                     ForEach(volumeAmounts, id: \.self) { volume in
                         Text("\(volume.formatted())")
                     }
+
+                    Text("Custom")
+                        .tag(Double.nan)
+                        .onTapGesture {
+                            showCustomIntake = true
+                        }
                 }
                 .pickerStyle(.inline)
-                
+                .sheet(isPresented: $showCustomIntake) {
+                    CustomIntake(volumeAmounts: $volumeAmounts, selectedVolume: $selectedVolume)
+                }
+
                 Section("Date") {
                     DatePicker(
                         "Date",
