@@ -6,6 +6,7 @@
 
 import OSLog
 import HealthKit
+import WidgetKit
 import Foundation
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
@@ -18,6 +19,8 @@ extension WaterData {
                 logger.info("Successfully added new water sample to Apple Health")
                 self.lastUpdated = .now
                 self.samples.append(sample)
+                
+                WidgetCenter.shared.reloadAllTimelines()
                 
                 // Cancel pending time-to-drink notifications
                 NotificationManager.shared.cancelPreviousNotifications()

@@ -10,7 +10,7 @@ import SwiftData
 import DiateryWaterData
 
 @main
-struct BackyardBirdsWatchApp: App {
+struct AkvaWatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

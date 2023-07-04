@@ -9,5 +9,6 @@ import Foundation
 
 public class WaterDataOptions {
     /// When true, do not save data to disk. When false, saves data to disk.
-    public static let inMemoryPersistence = true
+    public static let inMemoryPersistence = false
+    public static let appContainerId = "group.widget.com.gmail.roland.kajatin"
 }

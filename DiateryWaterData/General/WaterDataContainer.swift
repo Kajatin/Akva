@@ -13,11 +13,12 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
 
 struct WaterDataContainerViewModifier: ViewModifier {
     let container: ModelContainer
-    
+
     init(inMemory: Bool) {
-        container = try! ModelContainer(for: WaterData.schema, configurations: [ModelConfiguration(inMemory: inMemory)])
+        let configuration = ModelConfiguration(inMemory: inMemory, sharedAppContainerIdentifier: WaterDataOptions.appContainerId)
+        container = try! ModelContainer(for: WaterData.schema, configurations: [configuration])
     }
-    
+
     func body(content: Content) -> some View {
         content
             .syncData()
@@ -28,7 +29,7 @@ struct WaterDataContainerViewModifier: ViewModifier {
 struct SyncDataViewModifier: ViewModifier {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.modelContext) private var modelContext
-    
+
     func body(content: Content) -> some View {
         content.onAppear {
             WaterData.syncWaterDataFromHealth(modelContext: modelContext)

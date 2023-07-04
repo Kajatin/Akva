@@ -8,6 +8,7 @@
 import OSLog
 import SwiftData
 import HealthKit
+import WidgetKit
 import Foundation
 
 private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
@@ -46,6 +47,7 @@ private let logger = Logger(subsystem: "DiateryWaterData", category: "General")
             self.samples = samples
             self.lastSyncDate = .now
             logger.info("Successfully synced \(self.samples.count) water records")
+            WidgetCenter.shared.reloadAllTimelines()
         } onError: { error in
             self.error = error
             logger.error("Error syncing water records: \(String(describing: error))")
